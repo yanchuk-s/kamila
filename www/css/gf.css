@@ -1,0 +1,719 @@
+.header-topbar.bg-vet-clinic {
+  background-color: #e1004a;
+}
+
+.header-topbar.bg-vet-clinic .information-toppar .text{
+  color: #cdcdcd;
+}
+
+.information-toppar .icons{
+  color: #fff;
+}
+
+.header-topbar.bg-vet-clinic .social-topbar li .link:hover{
+  color: #020105;
+}
+
+
+.wrapper-mobile-nav .header-topbar{
+  font-size: 24px;
+  padding-left: 13px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.btn-anketa.btn-wrapper{
+  display: inline-block;
+}
+
+.btn-anketa.btn-wrapper .btn{
+  background-color: #e1004a;
+  border: 2px solid #e1004a;
+  padding: 0 25px;
+  font-size: 12px;
+  margin-top: 46px;
+  margin-left: 25px;
+}
+
+.btn-anketa.btn-wrapper .btn:hover{
+  background-color: #fff;
+  border: 2px solid #e1004a;
+  color: #e1004a;
+}
+
+.slider-medic .slide-5 .description ~ .btn-wrapper .btn {
+  background-color: #e1004a;
+  border-color: #e1004a;
+  font-size: 22px;
+  padding: 10px 40px;
+
+}
+
+.slider-medic .slide-5 .description ~ .btn-wrapper .btn:hover{
+  color: #e1004a;
+}
+
+.header-main .logo {
+  line-height: 105px;
+}
+
+.navigation .nav-links .main-menu{
+  line-height: 138px;
+}
+
+
+.header-main.header-fixed .logo {
+  line-height: 82px;
+}
+
+.header-main.header-fixed .logo .header-logo img{
+  max-width: 150px;
+}
+
+
+.header-main.header-fixed .navigation .nav-links .main-menu{
+  line-height: 106px;
+}
+
+
+.header-main.header-fixed .btn-anketa.btn-wrapper .btn {
+  margin-top: 30px;
+}
+
+.header-main.header-fixed .hamburger-menu{
+  top: 25px;
+}
+
+.slider-wrapper-bg{
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.sub-header{
+  color: #fff;
+}
+
+.slider-medic .slide-5 .header{
+  color: #fff;
+}
+
+.description{
+  color: #fff;
+}
+
+.feature-2:hover img{
+  -webkit-animation: effectHover 1s linear 0s forwards;
+  animation: effectHover 1s linear 0s forwards;
+}
+
+.vet-clinic.howwedo{
+  background: #fff;
+}
+
+
+.vet-clinic .typo-line:after {
+  background-color: #e1004a;
+}
+
+.about-us-wrapper .about-us-content .header {
+  color: #e1004a;
+  font-size: 20px;
+  text-align: right;
+}
+
+.about-us-wrapper .about-us-content .about-us-inner .about-us-title{
+  color: #e1004a;
+}
+
+.vet-clinic.howwedo .header ~ .description{
+  color: #414141;
+}
+
+.vet-clinic.howwedo .description{
+  color: #414141;
+}
+
+.vet-clinic.howwedo .typo-line .sub-header {
+  color: #2b2b2b;
+  font-size: 18px;
+}
+
+.style-italic{
+  font-style: italic;
+}
+
+.description-says{
+  text-align: right;
+  font-style: italic;
+}
+
+.photo_us img{
+  top: 0;
+  position: relative;
+  width: 350px;
+  height: 350px;
+  left: 0;
+  margin: 0;
+  border-radius: 50%;
+  border: 3px solid #e1004a;
+}
+
+.cancer-center.why-choose-us-wrapper-new img{
+  top: 0;
+  position: relative;
+  width: 350px;
+  height: 350px;
+  left: 0;
+  margin: 0;
+  border-radius: 50%;
+  border: 3px solid #e1004a;
+}
+
+.photo_us {
+  margin-top: 37px;
+  text-align: right;
+}
+
+.photo_us .about-us-inner .about-us-title{
+  text-align: right;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.fun-fact.vet-clinic{
+  background: none;
+  background-color: #e1004a;
+}
+
+.progress-inner .counter-inner {
+  color: #dedcdc;
+}
+
+.vet-clinic.fun-fact .progress-container .description-counter{
+  color: #fff;
+}
+
+.circle-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-center img{
+  width: 64px;
+  height: 64px;
+}
+
+.typo-line:after{
+  background-color: #e1004a;
+}
+
+.services-content .btn-for-icon i{
+  color: #e1004a;
+}
+
+.line{
+  background-color: #e1004a;
+}
+
+.services-content .btn-for-icon .icon2{
+  background-color: #e1004a;
+}
+
+.description{
+  color: #414141;
+}
+
+.header.style-italic{
+  font-size: 22px;
+  text-align: right;
+  margin: 20px 0;
+}
+
+.cancer-center.why-choose-us-wrapper-new .panel-heading.active .panel-title a, .cancer-center.why-choose-us-wrapper-new .panel-title:hover a, .cancer-center.why-choose-us-wrapper-new .panel-title:focus a {
+  color: #e1004a;
+  text-align: left;
+}
+
+.panel-title a {
+  display: block;
+  min-height: 21px;
+  font-weight: 600;
+}
+
+.cancer-center.why-choose-us-wrapper-new .faq-panel > .panel-heading + .panel-collapse > .panel-body{
+  text-align: left;
+}
+
+.panel-title a {
+  display: block;
+  min-height: 21px;
+  font-weight: 600;
+  text-align: left;
+  color: #e1004a;
+}
+
+.cancer-center.why-choose-us-wrapper-new .faq-panel .panel-heading.active:before {
+  content: '+';
+  background-color: #e1004a;
+  color: #fff;
+}
+
+.cancer-center.why-choose-us-wrapper-new .faq-panel .panel-heading:before {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  display: inline-block;
+  text-align: center;
+  content: '+';
+  font-size: 14px;
+  font-family: "fontawesome";
+  width: 30px;
+  line-height: 30px;
+  background-color: #e1004a;
+  color: #fff;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.btn-wrapper.back-to-top .btn{
+  border-color: #e1004a;
+  color: #e1004a;
+}
+
+.btn-wrapper.back-to-top .btn:hover{
+  background-color: #e1004a;
+}
+
+.services-content .description{
+  min-height: 130px;
+}
+
+.slider-medic .description{
+  color: #fff;
+}
+
+.typo-line {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 13px;
+  width: 160px;
+}
+
+
+
+ .comment-left-btn{
+   text-align: center;
+   font-size: 28px;
+   width: 40px;
+   line-height: 36px;
+   border: 2px solid #f190a7;
+   color: #f190a7;
+   position: absolute;
+   top: 40%;
+   left: 0%;
+   margin-left: -55px;
+
+ }
+
+.comment-right-btn{
+  text-align: center;
+  font-size: 28px;
+  width: 40px;
+  line-height: 36px;
+  border: 2px solid #f190a7;
+  color: #f190a7;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  margin-right: -55px;
+}
+
+.comment-right-btn:hover,
+.comment-left-btn:hover{
+  border: 2px solid #f190a7;
+  opacity: 0.5;
+  color: #f190a7;
+}
+
+.header-white{
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.sub-header-red{
+  color: #e1004a!important;
+}
+
+.testimonials.vet-clinic {
+  background-color: #e1004a;
+}
+
+.vet-clinic .typo-line-white:after {
+  background-color: #fff;
+}
+
+.footer-content.footer-content-style-5 .btn-for-icon {
+  color: #e1004a;
+}
+
+.footer-map.footer-content-style-5 {
+  background-color: #e1004a;
+}
+
+.footer-map.footer-content-style-5 .contact-form-wrapper .contact-form-content.right {
+  background-color: #e1004a;
+}
+
+.footer-map.footer-content-style-5 .contact-form-wrapper .contact-form-inner .working-hours-inner + .working-hours-inner {
+  border-top-color: #634966;
+  border: none;
+}
+
+.map-contact{
+  height: 485px;
+  left: -104.5px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+}
+
+.footer-base-right a{
+  color: #8f8f8f;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.footer-base-right a:hover{
+  text-decoration: underline;
+}
+
+.comment-right-btn:active, .comment-left-btn:active {
+  border: 2px solid #f190a7;
+  opacity: 0.5;
+  color: #f190a7;
+}
+
+.comment-right-btn:focus, .comment-left-btn:focus {
+  border: 2px solid #f190a7;
+  opacity: 0.5;
+  color: #f190a7;
+}
+
+.cancer-center.why-choose-us-wrapper-new{
+  padding-top: 0;
+}
+
+.info-footer .title-footer{
+  font-size: 40px;
+}
+
+.slider-medic .typo-adds-on {
+  width: 70%;
+}
+
+.slider-medic .slide-5 .header {
+  color: #fff;
+  font-size: 59px;
+  text-shadow: 0 3px 4px #020202;
+}
+
+.slider-medic .description {
+  color: #f5adab;
+  font-size: 34px;
+  line-height: 44px;
+  width: 100%;
+  text-shadow: 0 3px 4px #020202;
+}
+
+@media (max-width: 991px){
+  .slider-medic .typo-adds-on {
+    width: 90%;
+  }
+  .slider-medic .slide-5 .header {
+    color: #fff;
+    font-size: 29px;
+  }
+
+  .slider-medic .description {
+    color: #fff;
+    font-size: 15px;
+    line-height: 18px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px){
+  .slider-medic .typo-adds-on {
+    width: 100%;
+  }
+}
+
+
+.testimonials{
+  background-color: #e1004a;
+}
+
+.home-prenancy.testimonials .slider-testimonials .owl-dot{
+  width: 15px;
+  height: 15px;
+  margin: 0 6px;
+}
+
+.testimonials .slider-testimonials .testimonial-graph {
+  font-style: italic;
+  font-size: 25px;
+}
+
+.testimonials .slider-testimonials .owl-dots{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.recent-news-2 .recent-news-item {
+  padding: 17px 0 0;
+  padding-top: 0;
+}
+
+
+.standartModal .modal_md{
+  width: 400px;
+}
+
+.standartModal .modal_md .modal-header{
+  background-color: #e1004a;
+  padding: 25px 30px 25px 30px;
+}
+
+.standartModal .modal_md .modal-header h4{
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 21px;
+}
+
+.standartModal .modal_md .modal-header .close {
+  margin-top: 3px;
+  font-size: 26px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.standartModal .modal_md .modal-header .close:hover{
+  opacity: 1;
+}
+
+
+.standartModal .modal_md .modal-body{
+  padding: 25px 30px 25px 30px;
+}
+
+
+.standartModal .modal_md .modal-body .form-md-line-input .form-control{
+  border-bottom: 2px solid #ffc8da;
+  color: #000;
+}
+
+.standartModal .modal_md .modal-body .form-md-line-input .form-control:focus{
+  border-bottom: 2px solid #e1004a;
+}
+
+.standartModal .modal_md .modal-body .btn-wrapper{
+  width: 100%;
+  margin-top: 30px;
+}
+
+.standartModal .modal_md .modal-body .btn-wrapper .btn{
+  width: 100%;
+  background-color: #e1004a;
+  border: 2px solid #e1004a;
+  padding: 6px 0;
+}
+
+.standartModal .modal_md .modal-body .btn-wrapper .btn:hover{
+  background-color: #fff;
+  border: 2px solid #e1004a;
+  color: #e1004a;
+}
+
+
+
+@media (min-width: 768px) {
+  .standartModal .modal_md {
+    width: 400px;
+    margin: 70px auto 30px auto;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .standartModal .modal_md {
+    width: 300px;
+    margin: 70px auto 30px auto;
+  }
+}
+
+.blogs-section-title{
+  padding: 30px 0;
+}
+
+.blogs-section-title h1{
+  margin-left: 15px;
+}
+
+.right-slide-blog .media-body h4 a {
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.right-slide-blog .media-body a{
+  font-size: 16px;
+  text-decoration: underline;
+  color: #e1004a;
+}
+
+.right-slide-blog .media-body{
+  overflow: visible;
+}
+
+.recent-post-wrapper .post-list .media{
+  overflow: visible;
+}
+
+
+.blog-smoll-item-img{
+  display: table-cell;
+  vertical-align: middle;
+  width: 200px;
+  position: relative;
+  z-index: 2;
+  height: 194px;
+}
+
+.blog-smoll-item-img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.blog-big-item-img{
+  width: 100%;
+  height:220px;
+}
+
+.blog-big-item-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-2col-sidebar .grid-item {
+  width: 100%!important;
+}
+
+.recent-blogs-item{
+  display: flex;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #d9e7ee;
+}
+
+.recent-blogs-item:hover{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recent-blog_img{
+  width: 100px;
+  height: 70px;
+}
+
+.recent-blog_img img{
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+}
+
+
+.recent-blog-body{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recent-blog-body .title-a{
+  font-size: 16px;
+  font-weight: 500;
+  color: #e1004a;
+}
+
+.recent-blog-body .title-a:hover{
+  text-decoration: underline;
+}
+
+.recent-blog-body .btn-a{
+  font-size: 16px;
+  text-decoration: underline;
+  color: #e1004a;
+}
+
+.popular-blogs-left {
+  margin-top: 85px;
+}
+
+.category-list .category + .category .category-link, .archive-list .category + .category .category-link, .category-list .archive + .archive .category-link, .archive-list .archive + .archive .category-link, .category-list .category + .category .archive-link, .archive-list .category + .category .archive-link, .category-list .archive + .archive .archive-link, .archive-list .archive + .archive .archive-link {
+  padding-top: 10px;
+  border-top: 2px solid #f1f6fd;
+  text-transform: uppercase;
+}
+
+.blog-2col-sidebar .recent-news-item .recent-news-content .post-date {
+  position: relative;
+  top: -5px;
+  left: auto;
+  margin-left: -76px;
+}
+
+.blog-detail-wrapper .post-single .post-date {
+  left: -20px;
+  margin-right: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e1004a;
+}
+
+
+.blog-2col-sidebar .recent-news-item .recent-news-content:hover {
+  border-color: #e1004a;
+}
+
+.recent-news-item .recent-news-content .recent-news-title a:hover {
+  color: #e1004a;
+}
+
+.fa.fa-eye{
+  color: #6ac683;
+}
+
+.post-meta-single-blog .list-meta li{
+  font-size: 15px;
+}
+
+.post-meta-single-blog .list-meta li i {
+  font-size: 15px;
+}
+
+.single_blog-img{
+  width: 100%;
+}
+
+.single_blog-img img{
+  width: 100%;
+}
