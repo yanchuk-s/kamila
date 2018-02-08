@@ -73,5 +73,14 @@ Route::get('/admin/response/{page}', 'ResponseController@indexPagination')
         'page' => '^[2-9]{1}|[1-9]{1}[0-9]+$'
     ]);
 
+Route::get('/admin/category', 'AdminCategoryController@categoryshow');
+
+Route::get('/admin/add-category', 'AdminCategoryController@addcategoryform');
+
+Route::post('/admin/add-category/add', 'AdminCategoryController@addcategory');
+
+
+
+
 
 //Route::get('/home', 'HomeController@index')->name('home');

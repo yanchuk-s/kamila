@@ -519,3 +519,28 @@
 .adminModal .btn-adm-mod:hover{
     border: 2px solid #e1004a;
 }
+
+
+.category-list-block{
+    margin: 0;
+    padding: 0;
+}
+
+.category-list-block li{
+    display: inline-block;
+
+}
+
+.category-list-block li a{
+    display: block;
+    background: #f6f6f6;
+    padding: 8px 12px;
+    margin: 10px 10px 10px 0;
+    color: #000;
+}
+
+
+.category-list-block li a:hover{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+

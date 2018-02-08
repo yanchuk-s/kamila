@@ -30,6 +30,7 @@
 @if(auth()->check())
 
     @include('admin.adminModal')
+
     @include('admin.adminHeader')
 
     <div class="admin_section">
@@ -44,7 +45,8 @@
                 <div class="container-admin">
                     <div class="admin_main ">
                         <div class="section-admin-title">
-                            <h2>Добавить отзыв</h2>
+                            <h2>Добавить категорию
+                            </h2>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
@@ -53,14 +55,11 @@
                                     {{ csrf_field() }}
 
                                     <div class="form-group form-md-line-input form-md-floating-label">
-                                        <input id="user_name" type="text" class="form-control" placeholder="Имя пользователя">
-                                    </div>
-                                    <div class="form-group form-md-line-input form-md-floating-label">
-                                        <textarea id="respons-descr" placeholder="Отзыв" ></textarea>
-
+                                        <input id="category" type="text" class="form-control" placeholder="Категория">
                                     </div>
                                     <div class="btn-wrapper">
-                                        <button type="submit" id="add-response" class="btn btn-make-app">Добавить</button>
+                                        <button type="submit" id="add-category" class="btn btn-make-app">Добавить
+                                        </button>
                                     </div>
                                     <div class="clearfix"> </div>
                                 </form>
@@ -69,6 +68,7 @@
                         </div>
                     </div>
                 </div>
+
 
             </div>
         </div>
@@ -104,8 +104,9 @@
 
 <script src="/js/login.js"></script>
 
-<script src="/js/addResponse.js"></script>
+<script src="/js/deleteResponse.js"></script>
 
+<script src="/js/addCategory.js"></script>
 
 </body>
 </html>
