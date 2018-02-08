@@ -18,7 +18,9 @@ class HomeController extends LayoutController
         $model->homeBlog = Blog::limit(5)
             ->orderByRaw('created_at desc')
             ->get();
-        $model->homeResponse = Response::limit(5)->get();
+        $model->homeResponse = Response::limit(5)
+            ->orderByRaw('created_at desc')
+            ->get();
       // dd($model);
 
 

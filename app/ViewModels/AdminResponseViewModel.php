@@ -2,19 +2,17 @@
 
 namespace App\ViewModels;
 
-class ResponseViewModel extends LayoutViewModel
+class AdminResponseViewModel extends LayoutViewModel
 {
     public $page = 1;
 
-    public $limit = 4;
+    public $limit = 2;
     
     public $offset = 0;
     
     public $responseTotalCount;
 
     public $response;
-    
-    public $deleteResponse;
     
     public $randomResponses;
     

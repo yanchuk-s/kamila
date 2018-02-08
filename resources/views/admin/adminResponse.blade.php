@@ -30,6 +30,7 @@
 @if(auth()->check())
 
     @include('admin.adminModal')
+
     @include('admin.adminHeader')
 
     <div class="admin_section">
@@ -37,44 +38,38 @@
         <div class="row">
             <div class="col-md-2">
 
-                    @include('admin.adminNavbar')
+                @include('admin.adminNavbar')
 
             </div>
             <div class="col-md-10">
                 <div class="container-admin">
                     <div class="admin_main ">
                         <div class="section-admin-title">
-                            <h2>Блоги</h2>
+                            <h2>Отзывы</h2>
                         </div>
                         <div class="row">
-                            @foreach($model->blogs as $blog)
+
+                            @foreach($model->response as $response)
 
                                 <div class="col-md-12">
 
-                                    <div class="admin-blog-item">
+                                    <div class="admin-response-item">
                                         <div class="left-flex">
-                                            <div class="ad-item-img">
-                                                <div class="img-fit">
-                                                    <a href="/blog/{{ $blog->slug }}"><img src="{{ $blog->image_path }}" alt=""></a>
-                                                </div>
-                                            </div>
                                             <div class="blog-info">
-                                                <div class="blog-date-post"> {{ $blog->created_at->format('d-m-Y') }}</div>
-                                                <div class="title-post">
-                                                    <h4 class="recent-news-title"><a href="/blog/{{ $blog->slug }}">{{ $blog->title }}</a></h4>
-                                                </div>
-                                                <div class="recent-news-description">{{  str_limit($blog->description, 100)}}</div>
-                                                <div class="count-view-post">
-                                                    <ul class="list-meta list-inline list-unstyled">
-                                                        <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $blog->view_count }} Просмотров</li>
-                                                    </ul>
-                                                </div>
+                                                <div class="blog-date-post"> {{ $response->created_at->format('d-m-Y') }}</div>
+                                               <div class="user_name">
+                                                   <h5>{{  str_limit($response->user_name)}}</h5>
+                                               </div>
+                                                <div class="recent-news-description">{{$response->response}}</div>
                                             </div>
                                         </div>
                                         <div class="right-flex">
                                             <div class="admin-blog-btn">
-                                                <a href="" class="edit-btn">Редактировать</a>
-                                                <a href="" class="delete-btn">Удалить</a>
+                                                {{--<a href="" class="edit-btn">Редактировать</a>--}}
+
+
+                                                <a class="delete-btn delete-response">Удалить</a>
+                                                <input class="response_id" type="hidden" value="{{$response->id}}">
                                             </div>
                                         </div>
                                     </div>
@@ -89,7 +84,7 @@
 
                 <div class="admin-pagination">
 
-                    @include('admin.partial.pagination')
+                    @include('admin.partial.responsePagination')
 
                 </div>
 
@@ -126,6 +121,8 @@
 <script src="/js/main.js"></script>
 
 <script src="/js/login.js"></script>
+
+<script src="/js/deleteResponse.js"></script>
 
 
 </body>

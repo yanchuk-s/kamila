@@ -37,60 +37,37 @@
         <div class="row">
             <div class="col-md-2">
 
-                    @include('admin.adminNavbar')
+                @include('admin.adminNavbar')
 
             </div>
             <div class="col-md-10">
                 <div class="container-admin">
                     <div class="admin_main ">
                         <div class="section-admin-title">
-                            <h2>Блоги</h2>
+                            <h2>Додать отзыв</h2>
                         </div>
                         <div class="row">
-                            @foreach($model->blogs as $blog)
+                            <div class="col-md-12">
 
-                                <div class="col-md-12">
+                                <form method="post" class="admin-add-some">
+                                    {{ csrf_field() }}
 
-                                    <div class="admin-blog-item">
-                                        <div class="left-flex">
-                                            <div class="ad-item-img">
-                                                <div class="img-fit">
-                                                    <a href="/blog/{{ $blog->slug }}"><img src="{{ $blog->image_path }}" alt=""></a>
-                                                </div>
-                                            </div>
-                                            <div class="blog-info">
-                                                <div class="blog-date-post"> {{ $blog->created_at->format('d-m-Y') }}</div>
-                                                <div class="title-post">
-                                                    <h4 class="recent-news-title"><a href="/blog/{{ $blog->slug }}">{{ $blog->title }}</a></h4>
-                                                </div>
-                                                <div class="recent-news-description">{{  str_limit($blog->description, 100)}}</div>
-                                                <div class="count-view-post">
-                                                    <ul class="list-meta list-inline list-unstyled">
-                                                        <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $blog->view_count }} Просмотров</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="right-flex">
-                                            <div class="admin-blog-btn">
-                                                <a href="" class="edit-btn">Редактировать</a>
-                                                <a href="" class="delete-btn">Удалить</a>
-                                            </div>
-                                        </div>
+                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                        <input id="user_name" type="text" class="form-control" placeholder="Имя пользователя">
                                     </div>
+                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                        <textarea id="respons-descr" placeholder="Отзыв" ></textarea>
 
-                                </div>
+                                    </div>
+                                    <div class="btn-wrapper">
+                                        <button type="submit" id="add-response" class="btn btn-make-app">Додать</button>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </form>
 
-                            @endforeach
-
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="admin-pagination">
-
-                    @include('admin.partial.pagination')
-
                 </div>
 
             </div>
@@ -126,6 +103,8 @@
 <script src="/js/main.js"></script>
 
 <script src="/js/login.js"></script>
+
+<script src="/js/addResponse.js"></script>
 
 
 </body>

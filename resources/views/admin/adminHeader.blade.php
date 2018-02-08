@@ -24,10 +24,10 @@
                                 </li>
 
                                 <li>
-                                    <a href=""><i class="fas fa-comment-alt"></i>Отзывы</a>
+                                    <a href="/admin/response"><i class="fas fa-comment-alt"></i>Отзывы</a>
                                 </li>
                                 <li>
-                                    <a href=""><i class="fas fa-plus-circle"></i>Додать Отзыв</a>
+                                    <a href="/admin/add-response"><i class="fas fa-plus-circle"></i>Додать Отзыв</a>
                                 </li>
                                 <li>
                                     <a href=""><i class="fas fa-th-list"></i>Категории</a>

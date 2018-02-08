@@ -63,6 +63,11 @@
     color: red!important;
 }
 
+.incorectInput{
+    border: 2px solid red!important;
+    color: red!important;
+}
+
 
 /* HEADER */
 
@@ -326,6 +331,7 @@
     text-align: center;
     font-family: "Roboto", sans-serif;
     margin: 5px 0;
+    cursor: pointer;
 }
 
 .delete-btn:hover{
@@ -430,4 +436,86 @@
     .admin-blog-item .admin-blog-btn a{
         display: inline-block;
     }
+}
+
+
+.admin-response-item{
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.admin-response-item .recent-news-description{
+    margin-bottom: 15px;
+}
+
+.section-admin-title{
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid #eee;
+}
+
+
+
+.admin-add-some input{
+    border-bottom: 2px solid #ffc8da!important;
+    color: #000!important;
+}
+
+.admin-add-some input:focus{
+    border-bottom: 2px solid #e1004a!important;
+}
+
+.admin-add-some .btn-wrapper .btn{
+    background: #e1004a;
+    border-color: #e1004a;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.admin-add-some .btn-wrapper .btn:hover{
+    color: #e1004a;
+    background: #fff;
+}
+
+.admin-add-some textarea{
+    border: 2px solid #ffc8da!important;
+    color: #000!important;
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    min-height: 140px;
+
+    padding: 20px;
+}
+
+.admin-add-some textarea:focus{
+    border: 2px solid #e1004a!important;
+}
+
+.admin-add-some .incorectInput{
+    border: 2px solid red!important;
+    color: red!important;
+    border-bottom: 2px solid red!important;;
+}
+
+
+.adminModal .admin-modal-messege{
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.adminModal .btn-adm-mod{
+    width: 100%;
+    background-color: #e1004a;
+    color: #fff;
+    border: 2px solid #e1004a;
+    margin: 20px 0;
+}
+
+
+.adminModal .btn-adm-mod:hover{
+    border: 2px solid #e1004a;
 }

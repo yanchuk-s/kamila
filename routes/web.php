@@ -58,4 +58,20 @@ Route::get('/admin/{page}', 'AdminBlogController@indexPagination')
 /* logout*/
 Route::get('/logout', 'LogoutController@logout');
 
+
+/* admin response*/
+Route::get('/admin/response', 'ResponseController@responseShowIndex');
+
+Route::get('/admin/add-response', 'ResponseController@addResponseForm');
+
+Route::post('/admin/add-response/add', 'ResponseController@addResponse');
+
+Route::post('/admin/response/delete', 'ResponseController@deleteResponse');
+
+Route::get('/admin/response/{page}', 'ResponseController@indexPagination')
+    ->where([
+        'page' => '^[2-9]{1}|[1-9]{1}[0-9]+$'
+    ]);
+
+
 //Route::get('/home', 'HomeController@index')->name('home');
