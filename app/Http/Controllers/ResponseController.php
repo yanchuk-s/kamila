@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class ResponseController extends LayoutController
 {
-
+    
     public function responseShowIndex()
     {
 

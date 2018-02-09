@@ -19,11 +19,6 @@ class BlogController extends LayoutController
         
         $model = new BlogViewModel($language ,'blog-list', 1);
 
-//        $model->blogs = Blog::limit($model->limit)
-//            ->offset($model->offset)
-//            ->orderByRaw('created_at desc')
-//            ->get();
-
         $model->blogs = Blog::select([
             'id',
             'category_id',
@@ -127,7 +122,17 @@ class BlogController extends LayoutController
 
         $model = new BlogViewModel($language ,'blog-list', 1);
 
-        $model->category = Category::whereSlug($slugCaregory)->first();
+        $model->category = Category::select([
+            'id',
+            'name_' . $model->language . ' as name',
+            'slug',
+            'created_at',
+            'updated_at',
+
+        ])->whereSlug($slugCaregory)->first();
+
+        $model->metaTitle= '| ' . $model->category->name;
+        $model->metaDescription=str_limit(strip_tags($model->category->name),250);
 
         $model->blogs = Blog::select([
             'id',
@@ -145,6 +150,8 @@ class BlogController extends LayoutController
             ->offset($model->offset)
             ->orderByRaw('created_at desc')
             ->get();
+
+
 
         $model->blogsTotalCount = Blog::whereCategoryId($model->category->id)->count();
 
@@ -247,9 +254,11 @@ class BlogController extends LayoutController
             'view_count',
             'created_at',
             'updated_at',
-        ])->
+        ])->whereSlug($slug)->first();
 
-        whereSlug($slug)->first();
+        $model->metaTitle= '| ' . $model->blog->title;
+        $model->metaDescription=str_limit(strip_tags($model->blog->description),250);
+
 
         $model->blog->increment('view_count');
 

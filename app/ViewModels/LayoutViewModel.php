@@ -15,6 +15,10 @@ abstract class LayoutViewModel
     
     public $view;
     
+    public $metaTitle;
+
+    public $metaDescription;
+    
     public function __construct($language, $view)
     {
         $this->language = $language;

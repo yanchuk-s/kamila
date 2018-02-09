@@ -20,9 +20,9 @@ class ResponseViewModel extends LayoutViewModel
     
     public $randomResponses;
     
-    public function __construct($view, $page)
+    public function __construct($language, $view, $page)
     {
-        parent::__construct(Languages::DEFAULT_LANGUAGE, $view);
+        parent::__construct($language, $view);
         
         $this->page = $page;
         

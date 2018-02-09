@@ -54,10 +54,10 @@
                 </div>
                 <nav class="navigation pull-right">
                     <ul class="nav-links nav navbar-nav">
-                        <li><a href="/" class="main-menu"><span class="text">Главная</span></a></li>
+                        <li><a href="{{route('home',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Главная</span></a></li>
                         <li><a href="#" class="main-menu"><span class="text">Правила сотрудничества</span></a></li>
                         <li><a href="{{route('blogs-list',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Блог</span></a></li>
-                        <li><a href="#" class="main-menu"><span class="text">Отзывы</span></a></li>
+                        <li><a href="{{route('responses',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Отзывы</span></a></li>
                         <li><a href="#" class="main-menu"><span class="text">Контакты</span></a></li>
                     </ul>
 

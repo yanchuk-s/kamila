@@ -92,4 +92,11 @@ Route::get ('/{language?}', 'HomeController@homeIndex')
 
 
 
+Route::get ('responses/{language?}', 'ResponsePageController@responsePageIndex')
+    ->where([
+        'language' => '^(uk|ru)?$'
+    ])->name('responses');
+
+
+
 //Route::get('/home', 'HomeController@index')->name('home');
