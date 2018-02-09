@@ -2,6 +2,8 @@
 
 namespace App\ViewModels;
 
+use App\Helpers\Languages;
+
 class AdminResponseViewModel extends LayoutViewModel
 {
     public $page = 1;
@@ -18,7 +20,7 @@ class AdminResponseViewModel extends LayoutViewModel
     
     public function __construct($view, $page)
     {
-        parent::__construct($view);
+        parent::__construct(Languages::DEFAULT_LANGUAGE, $view);
         
         $this->page = $page;
         

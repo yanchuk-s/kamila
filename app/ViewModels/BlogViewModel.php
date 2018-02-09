@@ -2,6 +2,8 @@
 
 namespace App\ViewModels;
 
+use App\Helpers\Languages;
+
 class BlogViewModel extends LayoutViewModel
 {
     public $page = 1;
@@ -24,9 +26,9 @@ class BlogViewModel extends LayoutViewModel
     
     public $category;
 
-    public function __construct($view, $page)
+    public function __construct($language, $view, $page)
     {
-        parent::__construct($view);
+        parent::__construct($language, $view);
         
         $this->page = $page;
         

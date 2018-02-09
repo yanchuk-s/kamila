@@ -11,10 +11,13 @@ namespace App\ViewModels;
 
 abstract class LayoutViewModel
 {
+    public $language;
+    
     public $view;
     
-    public function __construct($view)
+    public function __construct($language, $view)
     {
+        $this->language = $language;
         $this->view = $view;
     }
 }

@@ -17,9 +17,11 @@ class CreateBlogsTable extends Migration
             $table->increments('id');
             
             $table->integer('category_id')->unsigned();
-            $table->string('title');
+            $table->string('title_ru');
+            $table->string('title_uk');
             $table->string('slug');
-            $table->text('description');
+            $table->text('description_ru');
+            $table->text('description_uk');
             $table->string('image_path');
             $table->integer('view_count')->default(0);
             $table->timestamps();

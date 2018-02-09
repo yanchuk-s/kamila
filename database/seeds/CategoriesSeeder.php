@@ -22,7 +22,8 @@ class CategoriesSeeder extends Seeder
         for ($i = 1; $i <= 5; $i++)
         {
             $category = new Category();
-            $category->name = "Category $i";
+            $category->name_ru = "ruCategory $i";
+            $category->name_uk = "ukCategory $i";
             $category->slug = "category-$i";
             $category->save();
         }

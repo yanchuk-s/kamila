@@ -20,10 +20,17 @@
                             <p class="text">+380686850956</p>
                         </div>
                     </li>
+
                 </ul>
             </div>
             <div class="topbar-right">
                 <ul class="list-inline list-unstyled social-topbar">
+                    <li>
+                        <div class="lang">
+                            <a href="{{route('home',['language'=> 'uk'])}}">Укр</a> /
+                            <a href="{{route('home',['language'=> null])}}">Рус</a>
+                        </div>
+                    </li>
                     <li><a href="#" class="link twitter"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#" class="link facebook"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#" class="link google"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
@@ -49,7 +56,7 @@
                     <ul class="nav-links nav navbar-nav">
                         <li><a href="/" class="main-menu"><span class="text">Главная</span></a></li>
                         <li><a href="#" class="main-menu"><span class="text">Правила сотрудничества</span></a></li>
-                        <li><a href="/blogs-list" class="main-menu"><span class="text">Блог</span></a></li>
+                        <li><a href="{{route('blogs-list',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Блог</span></a></li>
                         <li><a href="#" class="main-menu"><span class="text">Отзывы</span></a></li>
                         <li><a href="#" class="main-menu"><span class="text">Контакты</span></a></li>
                     </ul>

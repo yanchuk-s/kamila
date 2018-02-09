@@ -9,9 +9,20 @@
                 {{--PREV PAGE--}}
                 @if($isPrev)
                     <li class="pagi-inner">
-                        <a href="/category/{{ $model->category->slug }}/{{ $model->page - 1 == 1 ? '' : $model->page - 1 }}" aria-label="Previous" class="pagi-link">
-                            <span aria-hidden="true">Назад</span>
-                        </a>
+
+                        @if($model->page - 1 == 1)
+                            <a href="{{route('category',['slugCaregory'=>$model->category->slug , 'language'=> $model->language=='ru' ? null : $model->language])}}" aria-label="Previous" class="pagi-link">
+                                <span aria-hidden="true">Назад</span>
+                            </a>
+                        @else
+                            <a href="{{route('category-pagination',['slugCaregory'=>$model->category->slug ,'page'=>$model->page - 1 == 1 ? null : $model->page - 1 ,'language'=> $model->language=='ru' ? null : $model->language])}}" aria-label="Previous" class="pagi-link">
+                                <span aria-hidden="true">Назад</span>
+                            </a>
+                        @endif
+
+
+
+
                     </li>
                 @else
                     <li class="pagi-inner">
@@ -34,9 +45,18 @@
                                     {{ $page }}
                                 </a>
                             @else
-                                <a href="/category/{{ $model->category->slug }}/{{ $page == 1 ? '' : $page }}" class="pagi-link">
-                                    {{ $page }}
-                                </a>
+
+                                @if($model->page == 1)
+                                    <a href="{{route('category-pagination',['slugCaregory'=>$model->category->slug ,'page'=>$page == 1 ? '' : $page ,'language'=> $model->language=='ru' ? null : $model->language])}}" class="pagi-link">
+                                        {{ $page }}
+                                    </a>
+                                 @else
+                                    <a href="{{route('category',['slugCaregory'=>$model->category->slug ,'language'=> $model->language=='ru' ? null : $model->language])}}" class="pagi-link">
+                                        {{ $page }}
+                                    </a>
+                                    @endif
+
+
                             @endif
                         @endif
 
@@ -47,7 +67,9 @@
                 {{--NEXT PAGE--}}
                 @if($isNext)
                     <li class="pagi-inner">
-                        <a href="/category/{{ $model->category->slug }}/{{ $model->page + 1 }}" aria-label="Next" class="pagi-link">
+
+
+                        <a href="{{route('category-pagination',['slugCaregory'=>$model->category->slug ,'page'=>$model->page + 1 ,'language'=> $model->language=='ru' ? null : $model->language])}}" aria-label="Next" class="pagi-link">
                             <span aria-hidden="true">Далее</span>
                         </a>
                     </li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Helpers\Languages;
 use App\ViewModels\CategoryViewModel;
 use Illuminate\Http\Request;
 
@@ -10,9 +11,14 @@ class AdminCategoryController extends LayoutController
 {
     public function categoryshow()
     {
-        $model = new CategoryViewModel('admin.adminCategory');
+        $model = new CategoryViewModel(Languages::DEFAULT_LANGUAGE ,'admin.adminCategory');
 
-        $model->categories = Category::get();
+        $model->categories = Category::select([
+            'id',
+            'name_' . $model->language . ' as name',
+            'slug',
+            ])
+            ->get();
 
         return view("admin.adminCategory", compact('model'));
     }
@@ -26,12 +32,14 @@ class AdminCategoryController extends LayoutController
 
     public  function addcategory(){
 
-        $name = request('name');
+        $name_ru = request('name_ru');
+        $name_uk = request('name_uk');
 
 
         $addcategory = new Category();
-        $addcategory->name = $name;
-        $addcategory->slug = str_slug($name);
+        $addcategory->name_ru = $name_ru;
+        $addcategory->name_uk = $name_uk;
+        $addcategory->slug = str_slug($name_ru);
 
         $addcategory->save();
 

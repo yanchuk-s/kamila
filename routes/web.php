@@ -15,31 +15,35 @@
 //    return view('welcome');
 //});
 
-Route::get ('/', 'HomeController@homeIndex');
+Route::get ('/blogs-list/{language?}', 'BlogController@index') ->where([
+    'language' => '^(uk|ru)?$'
+])->name('blogs-list');
 
-Route::get ('/blogs-list', 'BlogController@index');
-
-Route::get('/blogs-list/{page}', 'BlogController@indexPagination')
+Route::get('/blogs-list/{page}/{language?}', 'BlogController@indexPagination')
     ->where([
-        'page' => '^[2-9]{1}|[1-9]{1}[0-9]+$'
-    ]);
+        'page' => '^[2-9]{1}|[1-9]{1}[0-9]+$',
+        'language' => '^(uk|ru)?$'
+    ])->name('blogs-list-pagination');
 
 
-Route::get('/category/{slugCaregory}', 'BlogController@categoryIndex')
-    ->where([
-        'slugCaregory' => '^[a-z0-9-]+$'
-    ]);
-
-Route::get('/category/{slugCaregory}/{page}', 'BlogController@categoryIndexPagination')
+Route::get('/category/{slugCaregory}/{language?}', 'BlogController@categoryIndex')
     ->where([
         'slugCaregory' => '^[a-z0-9-]+$',
-        'page' => '^[2-9]{1}|[1-9]{1}[0-9]+$'
-    ]);
+        'language' => '^(uk|ru)?$'
+    ])->name('category');
 
-Route::get('/blog/{slug}', 'BlogController@blogIndex')
+Route::get('/category/{slugCaregory}/{page}/{language?}', 'BlogController@categoryIndexPagination')
     ->where([
-        'slug' => '^[a-z0-9-]+$'
-    ]);
+        'slugCaregory' => '^[a-z0-9-]+$',
+        'page' => '^[2-9]{1}|[1-9]{1}[0-9]+$',
+        'language' => '^(uk|ru)?$'
+    ])->name('category-pagination');
+
+Route::get('/blog/{slug}/{language?}', 'BlogController@blogIndex')
+    ->where([
+        'slug' => '^[a-z0-9-]+$',
+        'language' => '^(uk|ru)?$'
+    ])->name('blog');
 
 
 /*  ADMIN   */
@@ -80,6 +84,11 @@ Route::get('/admin/add-category', 'AdminCategoryController@addcategoryform');
 Route::post('/admin/add-category/add', 'AdminCategoryController@addcategory');
 
 
+
+Route::get ('/{language?}', 'HomeController@homeIndex')
+    ->where([
+        'language' => '^(uk|ru)?$'
+    ])->name('home');
 
 
 

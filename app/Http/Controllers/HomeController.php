@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Helpers\Languages;
 use App\Response;
 use App\User;
 use App\ViewModels\HomeViewModel;
@@ -11,16 +12,29 @@ use App\ViewModels\BlogViewModel;
 
 class HomeController extends LayoutController
 {
-    public function homeIndex(){
+    public function homeIndex($language = Languages::DEFAULT_LANGUAGE) {
 //             auth()->logout();
+        Languages::localizeApp($language);
 
-        $model = new HomeViewModel('home', 1);
-        $model->homeBlog = Blog::limit(5)
-            ->orderByRaw('created_at desc')
+        $model = new HomeViewModel($language, 'home', 1);
+        $model->homeBlog = Blog::select([
+            'id',
+            'category_id',
+            'title_' . $model->language . ' as title',
+            'slug',
+            'description_' . $model->language . ' as description',
+            'image_path',
+            'view_count',
+            'created_at',
+            'updated_at',
+        ])->orderByDesc('created_at')
+            ->limit(5)
             ->get();
-        $model->homeResponse = Response::limit(5)
-            ->orderByRaw('created_at desc')
+
+        $model->homeResponse = Response::orderByDesc('created_at')
+            ->limit(5)
             ->get();
+
       // dd($model);
 
 

@@ -79,7 +79,7 @@
                             @foreach($model->categoryes as $category)
 
                                 <li class="category">
-                                    <a href="/category/{{ $category->slug }}" class="category-link">
+                                    <a href="{{route('category',['slug'=>$category->slug ,'language'=> $model->language=='ru' ? null : $model->language])}}" class="category-link">
                                         {{ $category->name }}
                                         <i class="fa fa-angle-right"></i>
                                     </a>

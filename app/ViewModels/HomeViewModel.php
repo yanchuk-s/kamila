@@ -14,9 +14,9 @@ class HomeViewModel extends LayoutViewModel
     
     public  $homeResponse;
 
-    public function __construct($view, $page)
+    public function __construct($language, $view, $page)
     {
-        parent::__construct($view);
+        parent::__construct($language, $view);
         
         $this->page = $page;
         

@@ -717,3 +717,17 @@
 .single_blog-img img{
   width: 100%;
 }
+
+.lang{
+  color: #f6eff7;
+}
+
+.lang a{
+  color: #f6eff7;
+  margin: 0 4px;
+}
+
+.lang a:hover{
+  opacity: 1;
+  color: #fff;
+}

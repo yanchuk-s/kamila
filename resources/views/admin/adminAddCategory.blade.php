@@ -55,7 +55,9 @@
                                     {{ csrf_field() }}
 
                                     <div class="form-group form-md-line-input form-md-floating-label">
-                                        <input id="category" type="text" class="form-control" placeholder="Категория">
+                                        <input id="category_ru" type="text" class="form-control" placeholder="Категория на Русском">                                   </div>
+                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                        <input id="category_uk" type="text" class="form-control" placeholder="Категория на Украинском">
                                     </div>
                                     <div class="btn-wrapper">
                                         <button type="submit" id="add-category" class="btn btn-make-app">Добавить

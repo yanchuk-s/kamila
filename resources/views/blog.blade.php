@@ -41,10 +41,12 @@
 
                                 <div class="recent-blogs-item">
                                     <div class="recent-blog_img">
-                                        <a href="/blog/{{ $randomBlog->slug }}"><img src="{{ $randomBlog->image_path }}" alt=""></a>
+
+
+                                        <a href="{{route('blog',['slug'=>$randomBlog->slug ,'language'=> $model->language=='ru' ? null : $model->language])}}"><img src="{{ $randomBlog->image_path }}" alt=""></a>
                                     </div>
                                     <div class="recent-blog-body">
-                                        <a href="/blog/{{ $randomBlog->slug }}" class="title-a">{{ $randomBlog->title }}</a>
+                                        <a href="{{route('blog',['slug'=>$randomBlog->slug ,'language'=> $model->language=='ru' ? null : $model->language])}}" class="title-a">{{ $randomBlog->title }}</a>
                                         <ul class="list-meta list-inline list-unstyled">
                                             <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $randomBlog->view_count }} Просмотров</li>
                                         </ul>
@@ -69,7 +71,7 @@
                             @foreach($model->categoryes as $category)
 
                                 <li class="category">
-                                    <a href="/category/{{ $category->slug }}" class="category-link">
+                                    <a href="{{route('category',['slug'=>$category->slug ,'language'=> $model->language=='ru' ? null : $model->language])}}"  class="category-link">
                                         {{ $category->name }}
                                         <i class="fa fa-angle-right"></i>
                                     </a>

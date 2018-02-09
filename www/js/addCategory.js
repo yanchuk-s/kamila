@@ -13,19 +13,27 @@ function clearInput(elem){
 $('#add-category').on('click', function (e) {
     e.preventDefault();
 
-    var name = $('#category').val();
+    var name_ru = $('#category_ru').val();
+    var name_uk = $('#category_uk').val();
 
     var loginError = false;
 
 
 
-    if (name.length == 0) {
-        clearInput($("#category"));
-        $('#category').attr('placeholder', 'Введите категорию');
+    if (name_ru.length == 0) {
+        clearInput($("#category_ru"));
+        $('#category_ru').attr('placeholder', 'Введите категорию');
         loginError = true;
     }
 
-    console.log(name);
+
+    if (name_uk.length == 0) {
+        clearInput($("#category_uk"));
+        $('#category_uk').attr('placeholder', 'Введите категорию');
+        loginError = true;
+    }
+    
+    console.log(name_ru , name_uk);
     
     
     if( loginError == false){
@@ -33,7 +41,9 @@ $('#add-category').on('click', function (e) {
             url: '/admin/add-category/add',
             type: 'POST',
             data: {
-                name: name
+                name_ru:  name_ru,
+                name_uk: name_uk
+                
             },
             success: function(data){
                 if (data.status == 'success')
@@ -42,7 +52,8 @@ $('#add-category').on('click', function (e) {
 
                     $('.admin-modal-messege').html('Категория добавлена!');
 
-                    $("#category").val('');
+                    $("#category_ru").val('');
+                    $("#category_uk").val('');
                 }
 
             },

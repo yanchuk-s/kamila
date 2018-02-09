@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Category;
+use App\Helpers\Languages;
 use App\ViewModels\BlogViewModel;
 use Illuminate\Http\Request;
 
@@ -12,40 +13,106 @@ class BlogController extends LayoutController
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index($language = Languages::DEFAULT_LANGUAGE)
     {
-        $model = new BlogViewModel('blog-list', 1);
+        Languages::localizeApp($language);
+        
+        $model = new BlogViewModel($language ,'blog-list', 1);
 
-        $model->blogs = Blog::limit($model->limit)
+//        $model->blogs = Blog::limit($model->limit)
+//            ->offset($model->offset)
+//            ->orderByRaw('created_at desc')
+//            ->get();
+
+        $model->blogs = Blog::select([
+            'id',
+            'category_id',
+            'title_' . $model->language . ' as title',
+            'slug',
+            'description_' . $model->language . ' as description',
+            'image_path',
+            'view_count',
+            'created_at',
+            'updated_at',
+        ])
+            ->limit($model->limit)
             ->offset($model->offset)
-            ->orderByRaw('created_at desc')
+            ->orderByDesc('created_at')
             ->get();
 
-        $model->randomBlogs = Blog::limit(5)
+
+        $model->randomBlogs = Blog::select([
+            'id',
+            'category_id',
+            'title_' . $model->language . ' as title',
+            'slug',
+            'description_' . $model->language . ' as description',
+            'image_path',
+            'view_count',
+            'created_at',
+            'updated_at',
+        ])->limit(5)
             ->orderByRaw('view_count desc')
             ->get();
         
-        $model->categoryes = Category::get();
+        $model->categoryes = Category::select([
+            'id',
+            'name_' . $model->language . ' as name',
+            'slug',
+            'created_at',
+            'updated_at',
+        ])->get();
 
         $model->blogsTotalCount = Blog::count();
 
         return view("blogs-list", compact('model'));
     }
     
-    public function indexPagination($page = 1)
-    {
-        $model = new BlogViewModel('blog-list', $page);
-
-        $model->blogs = Blog::limit($model->limit)
-            ->offset($model->offset)
-            ->orderByRaw('created_at desc')
-            ->get();
     
-        $model->randomBlogs = Blog::limit(5)
+    public function indexPagination($page = 1, $language = Languages::DEFAULT_LANGUAGE)
+    {
+        Languages::localizeApp($language);
+
+        $model = new BlogViewModel($language ,'blog-list', $page);
+
+
+        $model->blogs = Blog::select([
+            'id',
+            'category_id',
+            'title_' . $model->language . ' as title',
+            'slug',
+            'description_' . $model->language . ' as description',
+            'image_path',
+            'view_count',
+            'created_at',
+            'updated_at',
+        ])
+            ->limit($model->limit)
+            ->offset($model->offset)
+            ->orderByDesc('created_at')
+            ->get();
+
+        $model->randomBlogs = Blog::select([
+            'id',
+            'category_id',
+            'title_' . $model->language . ' as title',
+            'slug',
+            'description_' . $model->language . ' as description',
+            'image_path',
+            'view_count',
+            'created_at',
+            'updated_at',
+        ])->limit(5)
             ->orderByRaw('view_count desc')
             ->get();
 
-        $model->categoryes = Category::get();
+        $model->categoryes = Category::select([
+            'id',
+            'name_' . $model->language . ' as name',
+            'slug',
+            'created_at',
+            'updated_at',
+        ])->get();
 
         $model->blogsTotalCount = Blog::count();
 
@@ -53,73 +120,167 @@ class BlogController extends LayoutController
     }
 
 
-    public function categoryIndex($slugCaregory)
+    public function categoryIndex($slugCaregory, $language = Languages::DEFAULT_LANGUAGE)
     {
-        $model = new BlogViewModel('blog-list', 1);
+
+        Languages::localizeApp($language);
+
+        $model = new BlogViewModel($language ,'blog-list', 1);
 
         $model->category = Category::whereSlug($slugCaregory)->first();
 
-        $model->blogs = Blog::whereCategoryId($model->category->id)->limit($model->limit)
+        $model->blogs = Blog::select([
+            'id',
+            'category_id',
+            'title_' . $model->language . ' as title',
+            'slug',
+            'description_' . $model->language . ' as description',
+            'image_path',
+            'view_count',
+            'created_at',
+            'updated_at',
+        ])->
+
+            whereCategoryId($model->category->id)->limit($model->limit)
             ->offset($model->offset)
             ->orderByRaw('created_at desc')
             ->get();
 
         $model->blogsTotalCount = Blog::whereCategoryId($model->category->id)->count();
 
-        $model->randomBlogs = Blog::limit(5)
+        $model->randomBlogs = Blog::select([
+            'id',
+            'category_id',
+            'title_' . $model->language . ' as title',
+            'slug',
+            'description_' . $model->language . ' as description',
+            'image_path',
+            'view_count',
+            'created_at',
+            'updated_at',
+        ])->limit(5)
             ->orderByRaw('view_count desc')
             ->get();
 
-        $model->categoryes = Category::get();
+        $model->categoryes = Category::select([
+            'id',
+            'name_' . $model->language . ' as name',
+            'slug',
+            'created_at',
+            'updated_at',
+        ])->get();
 
         return view("category", compact('model'));
     }
-    
-    
-    public function categoryIndexPagination($slugCaregory, $page = 1)
+
+
+    public function categoryIndexPagination($slugCaregory, $page = 1, $language = Languages::DEFAULT_LANGUAGE)
     {
-        $model = new BlogViewModel('blog-list', $page);
+
+        Languages::localizeApp($language);
+
+        $model = new BlogViewModel($language ,'blog-list', $page);
+
 
         $model->category = Category::whereSlug($slugCaregory)->first();
 
-        $model->blogs = Blog::whereCategoryId($model->category->id)->limit($model->limit)
+        $model->blogs = Blog::select([
+            'id',
+            'category_id',
+            'title_' . $model->language . ' as title',
+            'slug',
+            'description_' . $model->language . ' as description',
+            'image_path',
+            'view_count',
+            'created_at',
+            'updated_at',
+        ])->
+
+        whereCategoryId($model->category->id)->limit($model->limit)
             ->offset($model->offset)
             ->orderByRaw('created_at desc')
             ->get();
 
         $model->blogsTotalCount = Blog::whereCategoryId($model->category->id)->count();
 
-        $model->randomBlogs = Blog::limit(5)
+        $model->randomBlogs = Blog::select([
+            'id',
+            'category_id',
+            'title_' . $model->language . ' as title',
+            'slug',
+            'description_' . $model->language . ' as description',
+            'image_path',
+            'view_count',
+            'created_at',
+            'updated_at',
+        ])->limit(5)
             ->orderByRaw('view_count desc')
             ->get();
 
-        $model->categoryes = Category::get();
+        $model->categoryes = Category::select([
+            'id',
+            'name_' . $model->language . ' as name',
+            'slug',
+            'created_at',
+            'updated_at',
+        ])->get();
 
         return view("category", compact('model'));
     }
 
 
-    
-    public function blogIndex($slug){
 
-        $model = new BlogViewModel('blog', 1);
+    public function blogIndex($slug, $language = Languages::DEFAULT_LANGUAGE){
 
-        $model->blog = Blog::whereSlug($slug)->first();
+        Languages::localizeApp($language);
+
+        $model = new BlogViewModel($language ,'blog', 1);
+
+
+        $model->blog = Blog::select([
+            'id',
+            'category_id',
+            'title_' . $model->language . ' as title',
+            'slug',
+            'description_' . $model->language . ' as description',
+            'image_path',
+            'view_count',
+            'created_at',
+            'updated_at',
+        ])->
+
+        whereSlug($slug)->first();
 
         $model->blog->increment('view_count');
 
-        $model->randomBlogs = Blog::limit(5)
+        $model->randomBlogs = Blog::select([
+            'id',
+            'category_id',
+            'title_' . $model->language . ' as title',
+            'slug',
+            'description_' . $model->language . ' as description',
+            'image_path',
+            'view_count',
+            'created_at',
+            'updated_at',
+        ])->limit(5)
             ->orderByRaw('view_count desc')
             ->get();
 
-        $model->categoryes = Category::get();
+        $model->categoryes = Category::select([
+            'id',
+            'name_' . $model->language . ' as name',
+            'slug',
+            'created_at',
+            'updated_at',
+        ])->get();
 
-        
+
+
         return view("blog", compact('model'));
     }
 
-
-  
+    
     
 }
 
