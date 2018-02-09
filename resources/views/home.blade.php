@@ -239,11 +239,11 @@
 
                                     <div class="recent-news-item item">
                                         <div class="blog-smoll-item-img">
-                                            <a href="/blog/{{ $homeBlog->slug }}"><img src="{{ $homeBlog->image_path }} " alt=""></a>
+                                            <a href=" {{route('blog',['slug'=>$homeBlog->slug ,'language'=> $model->language=='ru' ? null : $model->language])}}"><img src="{{ $homeBlog->image_path }} " alt=""></a>
                                         </div>
                                         <div class="recent-news-content">
                                             <div class="post-date"><span class="date"> {{$homeBlog->created_at->format('d') }} </span> {{ $homeBlog->created_at->format('m-Y') }}</div>
-                                            <h3 class="recent-news-title"><a href="/blog/{{ $homeBlog->slug }}">{{ $homeBlog->title }}</a></h3>
+                                            <h3 class="recent-news-title"><a href=" {{route('blog',['slug'=>$homeBlog->slug ,'language'=> $model->language=='ru' ? null : $model->language])}}">{{ $homeBlog->title }}</a></h3>
                                             <div class="recent-news-description">{{  str_limit($homeBlog->description, 80)}}</div>
                                             <ul class="list-meta list-inline list-unstyled">
                                                 <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $homeBlog->view_count }} Просмотров</li>
