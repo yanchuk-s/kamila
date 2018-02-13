@@ -26,7 +26,7 @@
                             </div>
                             <h1 class="post-title">{{ $model->blog->title }}</h1>
                             <div class="post-single-content">
-                                <p>{{ $model->blog->description }} </p>
+                                <p>{!! $model->blog->description !!} </p>
 
                             </div>
                         </div>

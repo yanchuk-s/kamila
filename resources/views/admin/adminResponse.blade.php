@@ -50,31 +50,55 @@
                         <div class="row">
 
                             @foreach($model->response as $response)
-
                                 <div class="col-md-12">
-
-                                    <div class="admin-response-item">
+                                    <div class="admin-blog-item">
                                         <div class="left-flex">
+                                            <div class="ad-item-img">
+                                                <div class="img-fit">
+                                                    <img src="{{ $response->image_response}}" alt="">
+                                                </div>
+                                            </div>
                                             <div class="blog-info">
                                                 <div class="blog-date-post"> {{ $response->created_at->format('d-m-Y') }}</div>
-                                               <div class="user_name">
-                                                   <h5>{{  str_limit($response->user_name)}}</h5>
-                                               </div>
-                                                <div class="recent-news-description">{{$response->response}}</div>
+                                                <div class="title-post">
+                                                    <h4 class="recent-news-title">{{ $response->user_name}}</h4>
+                                                </div>
+                                                <div class="recent-news-description">{{ $response->response}}</div>
+
                                             </div>
                                         </div>
                                         <div class="right-flex">
                                             <div class="admin-blog-btn">
-                                                {{--<a href="" class="edit-btn">Редактировать</a>--}}
-
-
                                                 <a class="delete-btn delete-response">Удалить</a>
                                                 <input class="response_id" type="hidden" value="{{$response->id}}">
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
+                                {{--<div class="col-md-12">--}}
+
+                                    {{--<div class="admin-response-item">--}}
+                                        {{--<div class="left-flex">--}}
+                                            {{--<div class="blog-info">--}}
+                                                {{--<div class="blog-date-post"> {{ $response->created_at->format('d-m-Y') }}</div>--}}
+                                               {{--<div class="user_name">--}}
+                                                   {{--<h5>{{  str_limit($response->user_name)}}</h5>--}}
+                                               {{--</div>--}}
+                                                {{--<div class="recent-news-description">{{$response->response}}</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="right-flex">--}}
+                                            {{--<div class="admin-blog-btn">--}}
+                                                {{--<a href="" class="edit-btn">Редактировать</a>--}}
+
+
+                                                {{--<a class="delete-btn delete-response">Удалить</a>--}}
+                                                {{--<input class="response_id" type="hidden" value="{{$response->id}}">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+
+                                {{--</div>--}}
 
                             @endforeach
 

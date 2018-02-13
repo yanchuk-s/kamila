@@ -21,6 +21,7 @@
 
     <link type="text/css" rel="stylesheet" href="/css/admin/admin.css">
 
+
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 </head>
@@ -63,7 +64,7 @@
                                                 <div class="title-post">
                                                     <h4 class="recent-news-title"><a href="/blog/{{ $blog->slug }}">{{ $blog->title }}</a></h4>
                                                 </div>
-                                                <div class="recent-news-description">{{  str_limit($blog->description, 100)}}</div>
+                                                <div class="recent-news-description">{{  str_limit(strip_tags($blog->description), 100)}}</div>
                                                 <div class="count-view-post">
                                                     <ul class="list-meta list-inline list-unstyled">
                                                         <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $blog->view_count }} Просмотров</li>
@@ -74,7 +75,7 @@
                                         <div class="right-flex">
                                             <div class="admin-blog-btn">
                                                 <a href="" class="edit-btn">Редактировать</a>
-                                                <a href="" class="delete-btn">Удалить</a>
+                                                <a data-delete-blog href="#" data-blog-id="{{ $blog->id }}" class="delete-btn">Удалить</a>
                                             </div>
                                         </div>
                                     </div>
@@ -123,7 +124,9 @@
 
 <script src="/js/jquery.matchHeight.js"></script>
 
+
 <script src="/js/main.js"></script>
+<script src="/js/deleteBlog.js"></script>
 
 <script src="/js/login.js"></script>
 

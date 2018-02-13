@@ -17,6 +17,7 @@ class CreateResponsesTable extends Migration
             $table->increments('id');
             $table->string('user_name');
             $table->text('response');
+            $table->string('image_response');
             $table->timestamps();
         });
     }

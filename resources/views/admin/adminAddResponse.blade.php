@@ -49,15 +49,26 @@
                         <div class="row">
                             <div class="col-md-12">
 
-                                <form method="post" class="admin-add-some">
+                                <form method="post" class="admin-add-some" name="addResponse">
                                     {{ csrf_field() }}
 
                                     <div class="form-group form-md-line-input form-md-floating-label">
-                                        <input id="user_name" type="text" class="form-control" placeholder="Имя пользователя">
+                                        <input name="userName" id="user_name" type="text" class="form-control" placeholder="Имя пользователя">
                                     </div>
-                                    <div class="form-group form-md-line-input form-md-floating-label">
-                                        <textarea id="respons-descr" placeholder="Отзыв" ></textarea>
 
+                                    <p class="incorect-input incorect-image-path"><i class="fas fa-exclamation-triangle"></i>Выберите картинку!</p>
+
+                                    <div class="input-group choose-img">
+                                        <label class="input-group-btn">
+                                            <span class="btn-choose-img">
+                                                Выбрать картинку<input name="responseImg" id="response-input-img" type="file" style="display: none;" multiple>
+                                            </span>
+                                        </label>
+                                        <input type="text" class="form-control input-file-name" readonly disabled>
+                                    </div>
+
+                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                        <textarea name="responsDescr" id="respons-descr" placeholder="Отзыв" ></textarea>
                                     </div>
                                     <div class="btn-wrapper">
                                         <button type="submit" id="add-response" class="btn btn-make-app">Добавить</button>

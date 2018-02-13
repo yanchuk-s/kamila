@@ -24,6 +24,7 @@ class ResponsePageController extends LayoutController
         $model->response = Response::select([
             'id',
             'user_name',
+            'image_response',
             'response',
             'created_at'
         ])
@@ -36,7 +37,7 @@ class ResponsePageController extends LayoutController
         return view("responses", compact('model'));
     }
     
-    
+
 }
 
 

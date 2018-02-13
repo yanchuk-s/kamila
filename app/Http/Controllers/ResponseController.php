@@ -54,13 +54,24 @@ class ResponseController extends LayoutController
     
     public function addResponse()
     {
-        $user_name = request('user_name');
-        $response = request('response');
+        $user_name = request('userName');
+        $response = request('responsDescr');
+
+
+
+        $extension = request()->file('responseImg')->getClientOriginalExtension(); // getting image extension
+        $dir = 'uploads/users/';
+        $filename = uniqid() . '_' . time() . '.' . $extension;
+        request()->file('responseImg')->move($dir, $filename);
+
+        $image_path = "/uploads/users/$filename";
 
         $addresponse = new Response();
         $addresponse->user_name = $user_name;
         $addresponse->response = $response;
+        $addresponse->image_response = $image_path;
         $addresponse->save();
+
 
         return response()->json([
             'status' => 'success'

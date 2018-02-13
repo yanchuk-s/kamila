@@ -88,6 +88,9 @@
 <script src="/js/jquery.matchHeight.js"></script>
 
 <script src="/js/main.js"></script>
+
+<script src="/js/showResponseModal.js"></script>
+
 <!-- LOADING SCRIPTS FOR PAGE-->
 <script src="/js/header.js"></script>
 <script src="/libs/isotope/isotope.min.js"></script>

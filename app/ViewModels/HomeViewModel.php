@@ -13,6 +13,8 @@ class HomeViewModel extends LayoutViewModel
     public $homeBlog;
     
     public  $homeResponse;
+    
+    public $slider;
 
     public function __construct($language, $view, $page)
     {

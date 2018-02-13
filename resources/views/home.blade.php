@@ -9,30 +9,25 @@
         <!-- 05_Home_Vet_Clinic-->
         <section class="slider-medic slider-default vet-clinic">
             <div class="slider-wrapper slide-5 owl-carousel">
-                <div style="background-image: url(/images/common/background/slider-font-1.jpg)" class="item item-big-9">
-                    <div class="slider-wrapper-bg"></div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="typo-1 typo-adds-on active">
-                                <h2 class="header fadeInUp animated delay-2">КАК ВЫЙТИ ЗАМУЖ ЗА ИНОСТРАНЦА?</h2>
-                                <div class="description fadeInUp animated delay-3">Отправьте лишь анкету - остальное сделаем мы. Бесплатно для женщин с Ровно!</div>
-                                <div class="btn-wrapper fadeInUp animated delay-4"><a data-toggle="modal" data-target=".anketamodal" class="btn">Подробнее</a></div>
+
+                @foreach($model->slider as $slider)
+
+                    <div style="background-image: url({{$slider->image_slide}})" class="item item-big-9">
+                        <div class="slider-wrapper-bg"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="typo-1 typo-adds-on active">
+                                    <h2 class="header fadeInUp animated delay-2">{{$slider->title}}</h2>
+                                    {{--КАК ВЫЙТИ ЗАМУЖ ЗА ИНОСТРАНЦА?--}}
+                                    {{--Отправьте лишь анкету - остальное сделаем мы. Бесплатно для женщин с Ровно!--}}
+                                    <div class="description fadeInUp animated delay-3">{{$slider->text}}</div>
+                                    <div class="btn-wrapper fadeInUp animated delay-4"><a data-toggle="modal" data-target=".anketamodal" class="btn">Подробнее</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div style="background-image: url(/images/common/background/slider-font-2.jpg)" class="item item-big-10">
-                    <div class="slider-wrapper-bg"></div>
-                    <div class="container">
-                        <div class="row">
-                            <div  class="typo-1 typo-adds-on active">
-                                <h2 class="header fadeInUp animated delay-2">КАК ВЫЙТИ ЗАМУЖ ЗА ИНОСТРАНЦА?</h2>
-                                <div class="description fadeInUp animated delay-3">Отправьте лишь анкету - остальное сделаем мы. Бесплатно для женщин с Ровно!</div>
-                                <div class="btn-wrapper fadeInUp animated delay-4"><a data-toggle="modal" data-target=".anketamodal" class="btn">Подробнее</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </section>
         <section class="howwedo vet-clinic padding-top-100 ">
@@ -244,7 +239,7 @@
                                         <div class="recent-news-content">
                                             <div class="post-date"><span class="date"> {{$homeBlog->created_at->format('d') }} </span> {{ $homeBlog->created_at->format('m-Y') }}</div>
                                             <h3 class="recent-news-title"><a href=" {{route('blog',['slug'=>$homeBlog->slug ,'language'=> $model->language=='ru' ? null : $model->language])}}">{{ $homeBlog->title }}</a></h3>
-                                            <div class="recent-news-description">{{  str_limit($homeBlog->description, 80)}}</div>
+                                            <div class="recent-news-description">{{  str_limit(strip_tags($homeBlog->description), 80)}}</div>
                                             <ul class="list-meta list-inline list-unstyled">
                                                 <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $homeBlog->view_count }} Просмотров</li>
                                             </ul>

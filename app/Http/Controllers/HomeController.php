@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\Helpers\Languages;
 use App\Response;
+use App\Slider;
 use App\User;
 use App\ViewModels\HomeViewModel;
 use Illuminate\Http\Request;
@@ -36,6 +37,14 @@ class HomeController extends LayoutController
             ->get();
 
       // dd($model);
+
+        $model->slider = Slider::select([
+            'id',
+            'title_' . $model->language . ' as title',
+            'text_' . $model->language . ' as text',
+            'image_slide',
+            'created_at'
+        ])->orderByDesc('created_at')->get();
 
 
 

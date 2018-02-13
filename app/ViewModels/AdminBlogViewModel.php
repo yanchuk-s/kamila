@@ -18,6 +18,8 @@ class AdminBlogViewModel extends LayoutViewModel
     
     public $blog;
     
+    public $categories;
+    
 
     public function __construct($view, $page)
     {

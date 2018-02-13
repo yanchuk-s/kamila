@@ -26,7 +26,7 @@
 
                                     <div class="post-date"><span class="date"> {{ $blog->created_at->format('d') }} </span> {{ $blog->created_at->format('m-Y') }}</div>
                                     <h3 class="recent-news-title"><a href=" {{route('blog',['slug'=>$blog->slug ,'language'=> $model->language=='ru' ? null : $model->language])}}">{{ $blog->title }}</a></h3>
-                                    <div class="recent-news-description">{{  str_limit($blog->description, 100)}}</div>
+                                    <div class="recent-news-description">{{  str_limit(strip_tags($blog->description), 100)}}</div>
                                     <ul class="list-meta list-inline list-unstyled">
                                         <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $blog->view_count }} Просмотров</li>
                                     </ul>

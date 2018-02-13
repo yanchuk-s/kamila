@@ -8,7 +8,7 @@ class AdminResponseViewModel extends LayoutViewModel
 {
     public $page = 1;
 
-    public $limit = 2;
+    public $limit = 4;
     
     public $offset = 0;
     

@@ -390,6 +390,5 @@
 $(function() {
     $('.recent-news-title').matchHeight();
     $('.recent-news-description').matchHeight();
-
-
+    
 });

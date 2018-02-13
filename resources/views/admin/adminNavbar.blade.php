@@ -5,7 +5,15 @@
         </li>
 
         <li>
-            <a href=""><i class="fas fa-plus-circle"></i>Добавить блог</a>
+            <a href="/admin/add-blog"><i class="fas fa-plus-circle"></i>Добавить блог</a>
+        </li>
+
+        <li>
+            <a href="/admin/sliders"><i class="fas fa-images"></i>Слайдер</a>
+        </li>
+
+        <li>
+            <a href="/admin/add-slider"><i class="fas fa-plus-circle"></i>Добавить слайд</a>
         </li>
 
         <li>

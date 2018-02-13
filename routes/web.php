@@ -49,10 +49,28 @@ Route::get('/blog/{slug}/{language?}', 'BlogController@blogIndex')
 /*  ADMIN   */
 Route::get('/login', 'LoginController@loginPage');
 
+
 Route::post('/login', 'LoginController@login');
 
 
+Route::get('/admin/add-slider', 'AdminSliderController@addSliderForm');
+Route::get('/admin/sliders', 'AdminSliderController@adminSliders');
+
+
+Route::post('/admin/sliders/delete', 'AdminSliderController@deleteSlide');
+Route::post('/admin/add-slider/add', 'AdminSliderController@addSlider');
+
+
+
+
+
 Route::get('/admin', 'AdminBlogController@adminBlogs');
+
+Route::get('/admin/add-blog', 'AdminBlogController@addBlogForm');
+
+Route::post('/admin/add-blog/add', 'AdminBlogController@addBlog');
+
+Route::post('/admin/add-blog/delete', 'AdminBlogController@deleteBlog');
 
 Route::get('/admin/{page}', 'AdminBlogController@indexPagination')
     ->where([
@@ -96,7 +114,6 @@ Route::get ('responses/{language?}', 'ResponsePageController@responsePageIndex')
     ->where([
         'language' => '^(uk|ru)?$'
     ])->name('responses');
-
 
 
 //Route::get('/home', 'HomeController@index')->name('home');
