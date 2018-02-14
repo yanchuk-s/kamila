@@ -11,10 +11,14 @@ $('[data-open-model-repsonse]').on('click', function (e) {
 
        var id = $(this).attr('data-response-id');
 
-    console.log(id);
+        // setTimeout(function () {
+        //     $('.response-click').click();
+        // },400);
 
+
+    
         $.ajax({
-            url: '',
+            url: '/responses',
             type: 'POST',
             data: {
                 id: id
@@ -22,9 +26,12 @@ $('[data-open-model-repsonse]').on('click', function (e) {
             success: function(data){
                 if (data.status == 'success')
                 {
-
+                    $('#modal-user-img').attr("src", data.response.image_response);
+                    $('#userName').html(data.response.user_name);
+                    $('.modal-resp-text').html(data.response.response);
+                    $('.response-click').click();
                 }
-        
+
             },
             error: function(error){
                 console.log(error);

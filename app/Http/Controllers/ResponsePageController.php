@@ -37,7 +37,28 @@ class ResponsePageController extends LayoutController
         return view("responses", compact('model'));
     }
     
+    public function showOneResp($language = Languages::DEFAULT_LANGUAGE)
+    {
+        Languages::localizeApp($language);
+        
+        $id = request('id');
+        
+        $model = new ResponseViewModel($language, 'responses', 1);
+        
+        $model->response = Response::select([
+            'id',
+            'user_name',
+            'image_response',
+            'response',
+            'created_at'
+        ])->whereId($id)->first();
 
+        return response()->json([
+            'status' => 'success',
+            'response' => $model->response
+        ]);
+    }
+    
 }
 
 

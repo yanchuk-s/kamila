@@ -45,6 +45,7 @@
                 <div class="container-admin">
                     <div class="admin_main slider-page">
                         <div class="section-admin-title">
+                            <a href="/admin/add-slider" class="adm-head-btn">Добавить слайдер</a>
                             <h2>Слайдер</h2>
                         </div>
                         <div class="row">
@@ -71,6 +72,7 @@
                                         </div>
                                         <div class="right-flex">
                                             <div class="admin-blog-btn">
+                                                <a href="" class="edit-btn">Редактировать</a>
                                                 <a data-delete-slide href="#" data-slide-id="{{ $slider->id }}" class="delete-btn">Удалить</a>
                                             </div>
                                         </div>

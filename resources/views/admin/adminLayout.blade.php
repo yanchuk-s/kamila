@@ -45,6 +45,7 @@
                 <div class="container-admin">
                     <div class="admin_main ">
                         <div class="section-admin-title">
+                            <a href="admin/add-blog" class="adm-head-btn">Добавить блог</a>
                             <h2>Блоги</h2>
                         </div>
                         <div class="row">

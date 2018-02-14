@@ -45,6 +45,7 @@
                 <div class="container-admin">
                     <div class="admin_main ">
                         <div class="section-admin-title">
+                            <a href="/admin/add-response" class="adm-head-btn">Добавить отзыв</a>
                             <h2>Отзывы</h2>
                         </div>
                         <div class="row">
@@ -69,6 +70,7 @@
                                         </div>
                                         <div class="right-flex">
                                             <div class="admin-blog-btn">
+                                                <a href="" class="edit-btn">Редактировать</a>
                                                 <a class="delete-btn delete-response">Удалить</a>
                                                 <input class="response_id" type="hidden" value="{{$response->id}}">
                                             </div>

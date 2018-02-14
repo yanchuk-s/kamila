@@ -45,6 +45,7 @@
                 <div class="container-admin">
                     <div class="admin_main ">
                         <div class="section-admin-title">
+                            <a href="/admin/add-category" class="adm-head-btn">Добавить категорию</a>
                             <h2>Категории</h2>
                         </div>
                         <div class="row">

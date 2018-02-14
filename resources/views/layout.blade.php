@@ -30,7 +30,10 @@
     <link rel="shortcut icon" href="/logo_smoll_jvo_icon.ico" type="image/x-icon">
 </head>
 <body>
+
+@include('responseModal')
 @include('modal')
+
 
 
 <!--BEGIN PAGE LOADER-->

@@ -20,6 +20,8 @@ class ResponseViewModel extends LayoutViewModel
     
     public $randomResponses;
     
+    public $respModal;
+    
     public function __construct($language, $view, $page)
     {
         parent::__construct($language, $view);

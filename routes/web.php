@@ -116,4 +116,6 @@ Route::get ('responses/{language?}', 'ResponsePageController@responsePageIndex')
     ])->name('responses');
 
 
+Route::post ('responses/', 'ResponsePageController@showOneResp');
+
 //Route::get('/home', 'HomeController@index')->name('home');
