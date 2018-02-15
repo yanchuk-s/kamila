@@ -119,3 +119,17 @@ Route::get ('responses/{language?}', 'ResponsePageController@responsePageIndex')
 Route::post ('responses/', 'ResponsePageController@showOneResp');
 
 //Route::get('/home', 'HomeController@index')->name('home');
+
+
+//EDIT
+
+Route::get('/admin/edit-blog/{id}', 'AdminBlogController@showBlogEdit')->name('showBlogEdit');
+Route::post('/admin/edit-blog/edit', 'AdminBlogController@editBlog')->name('editBlog');
+
+
+Route::get('/admin/edit-slider/{id}', 'AdminSliderController@showSliderEdit')->name('showSliderEdit');
+Route::post('/admin/edit-slider/edit', 'AdminSliderController@editSlide')->name('editSlide');
+
+
+Route::get('/admin/edit-response/{id}', 'ResponseController@showResponseEdit')->name('showResponseEdit');
+Route::post('/admin/edit-response/edit', 'ResponseController@editResponse')->name('editResponse');

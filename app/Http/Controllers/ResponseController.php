@@ -93,6 +93,45 @@ class ResponseController extends LayoutController
 
     }
     
+    
+    public function showResponseEdit($id){
+        $response = Response::whereId($id)->first();
+        return view('admin.adminEditResponse', compact('response'));
+    }
+    
+    public function editResponse(){
+        $user_name = request('userName');
+        $response = request('responsDescr');
+        $id = request('responseId');
+
+        $editresponse = Response::whereId($id)->first();
+
+        $editresponse->user_name = $user_name;
+        $editresponse->response = $response;
+
+        if (request()->file('responseImg') || !is_null(request()->file('responseImg'))){
+
+
+            $extension = request()->file('responseImg')->getClientOriginalExtension(); // getting image extension
+            $dir = 'uploads/users/';
+            $filename = uniqid() . '_' . time() . '.' . $extension;
+            request()->file('responseImg')->move($dir, $filename);
+
+            $image_path = "/uploads/users/$filename";
+
+            $editresponse->image_response = $image_path;
+
+        }
+
+        $editresponse->save();
+
+        return response()->json([
+            'status' => 'success'
+        ]);
+
+
+    }
+    
 }
 
 

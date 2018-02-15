@@ -75,8 +75,10 @@
                                         </div>
                                         <div class="right-flex">
                                             <div class="admin-blog-btn">
-                                                <a href="" class="edit-btn">Редактировать</a>
+
+                                                <a href="{{route('showBlogEdit',['id'=> $blog->id])}}" class="edit-btn">Редактировать</a>
                                                 <a data-delete-blog href="#" data-blog-id="{{ $blog->id }}" class="delete-btn">Удалить</a>
+
                                             </div>
                                         </div>
                                     </div>

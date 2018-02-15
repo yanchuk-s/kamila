@@ -70,7 +70,7 @@
                                         </div>
                                         <div class="right-flex">
                                             <div class="admin-blog-btn">
-                                                <a href="" class="edit-btn">Редактировать</a>
+                                                <a href="{{route('showResponseEdit',['id' => $response->id])}}" class="edit-btn">Редактировать</a>
                                                 <a class="delete-btn delete-response">Удалить</a>
                                                 <input class="response_id" type="hidden" value="{{$response->id}}">
                                             </div>

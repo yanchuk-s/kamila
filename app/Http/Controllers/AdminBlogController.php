@@ -6,6 +6,7 @@ use App\Blog;
 use App\Category;
 use App\Helpers\Languages;
 use App\ViewModels\AdminBlogViewModel;
+use DebugBar\DebugBar;
 use Illuminate\Http\Request;
 
 class AdminBlogController extends LayoutController
@@ -128,6 +129,55 @@ class AdminBlogController extends LayoutController
             'status' => 'success'
         ]);
 
+    }
+    
+    
+    
+    public function showBlogEdit($id){
+        
+        $blog = Blog::whereId($id)->first();
+        
+        $categories = Category::get();
+        
+        return view('admin.adminEditBlog', compact('blog','categories'));
+    }
+
+
+    public  function editBlog(){
+        $id= request('blogId');
+        $title_ru = request('titleRu');
+        $title_uk = request('titleUk');
+        $description_ru = request('descriptionRu');
+        $description_uk = request('descriptionUk');
+        $category_id = request('categoryId');
+
+        $editBlog = Blog::whereId($id)->first();
+
+        $editBlog->title_ru = $title_ru;
+        $editBlog->title_uk = $title_uk;
+        $editBlog->description_ru = $description_ru;
+        $editBlog->description_uk = $description_uk;
+        $editBlog->category_id = $category_id;
+        $editBlog->slug = str_slug($title_ru);
+
+
+        if (request()->file('blog-img') || !is_null(request()->file('blog-img'))){
+
+            $extension = request()->file('blog-img')->getClientOriginalExtension(); // getting image extension
+            $dir = 'uploads/';
+            $filename = uniqid() . '_' . time() . '.' . $extension;
+            request()->file('blog-img')->move($dir, $filename);
+            $image_path = "/uploads/$filename";
+            $editBlog->image_path = $image_path;
+
+        }
+
+
+        $editBlog->save();
+
+        return response()->json([
+            'status' => 'success'
+        ]);
     }
     
     

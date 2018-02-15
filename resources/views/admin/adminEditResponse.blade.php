@@ -30,7 +30,6 @@
 @if(auth()->check())
 
     @include('admin.adminModal')
-
     @include('admin.adminHeader')
 
     <div class="admin_section">
@@ -43,49 +42,46 @@
             </div>
             <div class="col-md-10">
                 <div class="container-admin">
-                    <div class="admin_main slider-page">
+                    <div class="admin_main ">
                         <div class="section-admin-title">
-                            <a href="/admin/add-slider" class="adm-head-btn">Добавить слайдер</a>
-                            <h2>Слайдер</h2>
+                            <h2>Редактировать отзыв</h2>
                         </div>
                         <div class="row">
+                            <div class="col-md-12">
 
-                            @foreach($model->slider as $slider)
+                                <form method="post" class="admin-add-some" name="editResponse">
+                                    {{ csrf_field() }}
 
-                                <div class="col-md-12">
+                                    <input type="hidden" name="responseId" value="{{$response->id}}">
 
-                                    <div class="admin-blog-item">
-                                        <div class="left-flex">
-                                            <div class="ad-item-img">
-                                                <div class="img-fit">
-                                                   <img src="{{ $slider->image_slide }}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="blog-info">
-                                                <div class="blog-date-post"> {{ $slider->created_at->format('d-m-Y') }}</div>
-                                                <div class="title-post">
-                                                    <h4 class="recent-news-title">{{ $slider->title }}</h4>
-                                                </div>
-                                                <div class="recent-news-description">{{ $slider->text }}</div>
-
-                                            </div>
-                                        </div>
-                                        <div class="right-flex">
-                                            <div class="admin-blog-btn">
-                                                <a href="{{route('showSliderEdit',['id' => $slider->id])}}" class="edit-btn">Редактировать</a>
-                                                <a data-delete-slide href="#" data-slide-id="{{ $slider->id }}" class="delete-btn">Удалить</a>
-                                            </div>
-                                        </div>
+                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                        <input name="userName" id="user_name" type="text" class="form-control" placeholder="Имя пользователя" value="{{$response->user_name}}">
                                     </div>
 
-                                </div>
+                                    <p class="incorect-input incorect-image-path"><i class="fas fa-exclamation-triangle"></i>Выберите картинку!</p>
 
-                            @endforeach
+                                    <div class="input-group choose-img">
+                                        <label class="input-group-btn">
+                                            <span class="btn-choose-img">
+                                                Выбрать картинку<input name="responseImg" id="response-input-img" type="file" style="display: none;" multiple>
+                                            </span>
+                                        </label>
+                                        <input type="text" class="form-control input-file-name" readonly disabled value="{{$response->image_response}}" >
+                                    </div>
 
+                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                        <textarea name="responsDescr" id="respons-descr" placeholder="Отзыв">{{$response->response}}</textarea>
+                                    </div>
+                                    <div class="btn-wrapper">
+                                        <button type="submit" id="edit-response" class="btn btn-make-app">Сохранить</button>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </form>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-
 
             </div>
         </div>
@@ -121,8 +117,8 @@
 
 <script src="/js/login.js"></script>
 
+<script src="/js/editResponse.js"></script>
 
-<script src="/js/deleteSlider.js"></script>
 
 </body>
 </html>

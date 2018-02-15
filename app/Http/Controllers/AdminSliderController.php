@@ -80,4 +80,44 @@ class AdminSliderController extends LayoutController
         ]);
 
     }
+
+    public function showSliderEdit($id){
+        $slider = Slider::whereId($id)->first();
+        return view('admin.adminEditSlider', compact('slider'));
+    }
+    
+    
+    public function editSlide(){
+        
+        $id = request('slidId');
+        $title_ru = request('titleSliderRu');
+        $title_uk = request('titleSliderUk');
+        $text_ru = request('textSliderRu');
+        $text_uk = request('textSliderUk');
+        
+        $editslide = Slider::whereId($id)->first();
+
+        $editslide->title_ru = $title_ru;
+        $editslide->title_uk = $title_uk;
+        $editslide->text_ru = $text_ru;
+        $editslide->text_uk = $text_uk;
+
+        if (request()->file('sliderImg') || !is_null(request()->file('sliderImg'))){
+
+            $extension = request()->file('sliderImg')->getClientOriginalExtension();
+            $dir = 'uploads/slider/';
+            $filename = uniqid() . '_' . time() . '.' . $extension;
+            request()->file('sliderImg')->move($dir, $filename);
+            $image_path = "/uploads/slider/$filename";
+            $editslide->image_slide = $image_path;
+
+        }
+
+        $editslide->save();
+
+        return response()->json([
+            'status' => 'success'
+        ]);
+        
+    }
 }
