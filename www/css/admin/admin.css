@@ -245,6 +245,7 @@
     position: fixed;
     width: 300px;
     left: 0;
+    overflow-y: auto;
 }
 
 .admin_nav ul{
@@ -698,4 +699,9 @@
 
 .category-adm-item .title-post a:hover{
     text-decoration: underline;
+}
+
+
+.rulers-adm{
+    margin-bottom: 40px;
 }

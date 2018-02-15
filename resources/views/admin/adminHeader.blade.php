@@ -43,6 +43,10 @@
                                 <li>
                                     <a href="/admin/add-category"><i class="fas fa-plus-circle"></i>Добавить категорию</a>
                                 </li>
+
+                                <li>
+                                    <a href="/admin/rulers"><i class="far fa-file-alt"></i>Правила сотрудничества</a>
+                                </li>
                                 <li>
                                     <a href="/logout"><i class="fas fa-sign-out-alt"></i>Выход</a>
                                 </li>

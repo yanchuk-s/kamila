@@ -917,6 +917,13 @@ margin-top: 20px;
   background-color:#e1004a ;
 }
 
+.rulers-div p{
+  font-size: 15px;
+}
+
+
+
+
 .response-item .services-content:after{
   background-color: rgba(250, 252, 253, 0.9);
 

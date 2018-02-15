@@ -118,8 +118,18 @@ Route::get ('responses/{language?}', 'ResponsePageController@responsePageIndex')
 
 Route::post ('responses/', 'ResponsePageController@showOneResp');
 
+
+
+Route::get ('rulers/{language?}', 'RulersController@rulersPage')
+    ->where([
+        'language' => '^(uk|ru)?$'
+    ])->name('rulers');
+
 //Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get ('/admin/rulers', 'AdminRulersController@showRulers');
+Route::post ('/admin/rulers/edit', 'AdminRulersController@editRulers');
 
 //EDIT
 
