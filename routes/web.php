@@ -133,3 +133,6 @@ Route::post('/admin/edit-slider/edit', 'AdminSliderController@editSlide')->name(
 
 Route::get('/admin/edit-response/{id}', 'ResponseController@showResponseEdit')->name('showResponseEdit');
 Route::post('/admin/edit-response/edit', 'ResponseController@editResponse')->name('editResponse');
+
+Route::get('/admin/edit-category/{id}', 'AdminCategoryController@showCategoryEdit')->name('showCategoryEdit');
+Route::post('/admin/edit-category/edit', 'AdminCategoryController@editCategory')->name('editCategory');

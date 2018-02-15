@@ -48,6 +48,34 @@ class AdminCategoryController extends LayoutController
         ]);
 
     }
+    
+    public function showCategoryEdit($id){
+        $category = Category::whereId($id)->first();
+        return view ('admin.adminEditCategory', compact('category'));
+    }
+
+
+
+    public function editCategory(){
+        $name_ru = request('name_ru');
+        $name_uk = request('name_uk');
+        $id = request('id');
+
+//        \Debagbar::info(request()->all());
+
+        $editcategory = Category::whereId($id)->first();
+
+        $editcategory->name_ru = $name_ru;
+        $editcategory->name_uk = $name_uk;
+        $editcategory->slug = str_slug($name_ru);
+
+        $editcategory->save();
+
+        return response()->json([
+            'status' => 'success'
+        ]);
+
+    }
 
     
 }

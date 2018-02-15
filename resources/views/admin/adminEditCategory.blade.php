@@ -45,32 +45,30 @@
                 <div class="container-admin">
                     <div class="admin_main ">
                         <div class="section-admin-title">
-                            <a href="/admin/add-category" class="adm-head-btn">Добавить категорию</a>
-                            <h2>Категории</h2>
+                            <h2>Редактировать категорию
+                            </h2>
                         </div>
                         <div class="row">
+                            <div class="col-md-12">
 
-                                        @foreach($model->categories as $category)
-                                         <div class="col-md-12">
-                                            <div class="col-md-12">
-                                                <div class="admin-blog-item category-adm-item">
-                                                    <div class="left-flex">
-                                                        <div class="blog-info">
-                                                            <div class="title-post">
+                                <form method="post" class="admin-add-some">
+                                    {{ csrf_field() }}
 
-                                                                <a href="/category/{{ $category->slug }}"><h4 class="recent-news-title">{{ $category->name }}</h4></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-flex">
-                                                        <div class="admin-blog-btn">
-                                                            <a href="{{route('showCategoryEdit', ['id' => $category->id])}}" class="edit-btn">Редактировать</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @endforeach
+                                    <input type="hidden" name="categoryId" id="categoryId" value="{{$category->id}}">
+
+                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                        <input id="category_ru" type="text" class="form-control" placeholder="Категория на Русском" value="{{$category->name_ru}}">                                   </div>
+                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                        <input id="category_uk" type="text" class="form-control" placeholder="Категория на Украинском" value="{{$category->name_uk}}">
+                                    </div>
+                                    <div class="btn-wrapper">
+                                        <button type="submit" id="edit-category" class="btn btn-make-app">Сохранить
+                                        </button>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </form>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -112,6 +110,7 @@
 
 <script src="/js/deleteResponse.js"></script>
 
+<script src="/js/editCategory.js"></script>
 
 </body>
 </html>
