@@ -1430,7 +1430,6 @@ header {
  ========     FOOTER     ========
 ================================*/
 .footer-content {
-  background-image: url(../images/common/background/background-quickconnect.jpg);
   webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1829,14 +1828,12 @@ header {
   width: 99vw;
 }
 .footer-map.footer-map-style-2 {
-  background-image: url(../images/common/background/background-pattern.jpg);
   background-repeat: repeat;
   background-attachment: scroll;
   background-size: 0.6%;
   background-color: transparent;
 }
 .footer-map.footer-map-style-2 .contact-form-wrapper .contact-form-content.right {
-  background-image: url(../images/common/background/background-pattern.jpg);
   background-repeat: repeat;
   background-attachment: scroll;
   background-size: 1.5%;
@@ -1875,7 +1872,6 @@ header {
 .footer-map.footer-content-style-8.new-footer-map .contact-form-wrapper .contact-form-content.right {
   text-align: left;
   background-color: transparent;
-  background-image: url(../images/common/background/background-pattern-3.jpg);
   background-repeat: repeat;
   background-size: 200%;
   padding: 78px 65px 75px 70px;
@@ -1936,7 +1932,6 @@ header {
 .footer-map.footer-content-style-13.new-footer-map .contact-form-wrapper .contact-form-content.right {
   text-align: left;
   background-color: transparent;
-  background-image: url(../images/common/background/background-pattern.jpg);
   background-repeat: repeat;
   background-size: 1.6%;
   padding: 78px 65px 75px 70px;
@@ -2048,12 +2043,10 @@ header {
  ========    BACKGROUND   ========
  ===============================*/
 .home-appointment {
-  background-image: url(../images/common/background/background-appointment.jpg);
   -ms-background-size: cover;
   background-size: cover;
 }
 .howwedo:before {
-  background-image: url(../images/common/background/background-pattern.jpg);
   background-repeat: repeat;
   background-attachment: scroll;
   background-size: 0.8%;
@@ -2066,7 +2059,6 @@ header {
   position: relative;
 }
 .dental-care.howwedo:before {
-  background-image: url(../images/common/background/background-testimonials.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -2077,7 +2069,6 @@ header {
   background-color: #0f77ad;
 }
 .testimonials:before {
-  background-image: url(../images/common/background/background-testimonials.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -2108,7 +2099,6 @@ header {
 }
 .testimonials.home-orthopedic {
   background-color: transparent;
-  background-image: url(../images/common/background/background-testimonials2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -2122,7 +2112,6 @@ header {
   background-color: #f5fcff;
 }
 .fun-fact {
-  background-image: url(../images/common/background/background-pattern.jpg);
   background-attachment: scroll;
   background-repeat: repeat;
   background-size: 0.6%;
@@ -2131,27 +2120,24 @@ header {
 .fun-fact.heart-center,
 .fun-fact.pediatric,
 .fun-fact.dental-care {
-  background-image: url(../images/common/background/background-pattern-2.jpg);
+
   background-repeat: repeat;
   background-size: contain;
 }
 .fun-fact.cancer-center {
-  background-image: url(../images/common/background/background-pattern-3.jpg);
+
   background-repeat: repeat;
   background-size: contain;
 }
 .fun-fact.vet-clinic {
-  background-image: url(../images/common/background/background-pattern-4.jpg);
   background-repeat: repeat;
   background-size: contain;
 }
 .fun-fact.dermatology {
-  background-image: url(../images/common/background/background-text-slider.jpg);
   background-repeat: repeat;
   background-size: contain;
 }
 .fun-fact.home-ent-center {
-  background-image: url(../images/common/background/background-ent.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -2166,7 +2152,6 @@ header {
   background-color: rgba(34, 173, 249, 0.85);
 }
 .fun-fact.home-nutrition {
-  background-image: url(../images/common/background/background-nutrition.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -2181,7 +2166,6 @@ header {
   background-color: rgba(13, 27, 1, 0.77);
 }
 .fun-fact.home-ophthalmology {
-  background-image: url(../images/common/background/background-ophthalmology.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -2196,13 +2180,11 @@ header {
   background-color: rgba(137, 168, 192, 0.8);
 }
 .fun-fact.landing-page {
-  background-image: url(../images/common/background/background-landing.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 .about-us-wrapper .fun-fact {
-  background-image: url(../images/common/background/background-pattern-2.jpg);
   background-repeat: repeat;
   background-size: contain;
 }
@@ -2210,7 +2192,6 @@ header {
   background-color: #101518;
 }
 .heart-center.howwedo:before {
-  background-image: url(../images/common/background/background-testimonials.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -2218,7 +2199,6 @@ header {
   background-attachment: scroll;
 }
 .why-choose-us-wrapper {
-  background-image: url(../images/common/background/background-services.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -2243,23 +2223,18 @@ header {
   background-color: rgba(230, 138, 89, 0.95);
 }
 .text-below-slider {
-  background-image: url(../images/common/background/background-text-slider.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
 }
 .text-below-slider.pediatric {
-  background-image: url(../images/common/background/background-text-slider-2.jpg);
 }
 .text-below-slider.home-ophthalmology {
-  background-image: url(../images/common/background/background-text-slider-3.jpg);
 }
 .text-below-slider.home-orthopedic {
-  background-image: url(../images/common/background/background-text-slider-4.jpg);
 }
 .why-choose-us-wrapper-new.pediatric,
 .why-choose-us-wrapper-new.home-orthopedic {
-  background-image: url(../images/common/background/background-pattern.jpg);
   background-repeat: repeat;
   background-attachment: scroll;
   background-size: 0.6%;
@@ -2284,7 +2259,6 @@ header {
   background-color: #6c69de;
 }
 .video-psychology-wrapper {
-  background-image: url(../images/common/background/background-video.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -2302,7 +2276,6 @@ header {
   background-color: #f9fbff;
 }
 .coming-soon-1 {
-    background-image: url(../images/common/background/background-comingsoon.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center
@@ -2314,7 +2287,6 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/common/background/background-comingsoon.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -2327,7 +2299,6 @@ header {
     background-color: #252d34
 }
 .coming-soon-2 .img-coming-soon-right {
-    background-image: url(../images/common/background/background-comingsoon2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center

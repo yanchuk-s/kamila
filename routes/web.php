@@ -146,3 +146,18 @@ Route::post('/admin/edit-response/edit', 'ResponseController@editResponse')->nam
 
 Route::get('/admin/edit-category/{id}', 'AdminCategoryController@showCategoryEdit')->name('showCategoryEdit');
 Route::post('/admin/edit-category/edit', 'AdminCategoryController@editCategory')->name('editCategory');
+
+// Callback
+
+
+Route::get ('/contact/{language?}', 'ContactController@contactPage')
+    ->where([
+        'language' => '^(uk|ru)?$'
+    ])->name('contact');
+
+Route::post('contact/send','ContactController@send');
+
+
+Route::post('/callback','HomeController@collbackModal');
+
+Route::post('/orderColl','HomeController@orderColl');

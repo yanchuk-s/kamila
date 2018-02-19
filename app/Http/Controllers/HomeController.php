@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Helpers\Languages;
+use App\Mail\callbackModal;
+use App\Mail\OrderColl;
 use App\Response;
 use App\Slider;
 use App\User;
 use App\ViewModels\HomeViewModel;
 use Illuminate\Http\Request;
 use App\ViewModels\BlogViewModel;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends LayoutController
 {
@@ -49,5 +52,41 @@ class HomeController extends LayoutController
 
 
         return view("home", compact('model'));
+    }
+
+    public function collbackModal(){
+        $name = request('name');
+        $phone = request('phone');
+        $email = request('email');
+        Mail::to('yanchukserhiy96@gmail.com')->send(new callbackModal(
+            $name,
+            $phone,
+            $email
+        ));
+
+        return response()->json([
+            'status' => 'success',
+            'name' => $name,
+            'phone' => $phone,
+            'email' => $email
+        ]);
+
+    }
+    
+    public function orderColl(){
+        $name = request('name');
+        $phone = request('phone');
+
+        Mail::to('yanchukserhiy96@gmail.com')->send(new orderColl(
+            $name,
+            $phone
+        ));
+
+        return response()->json([
+            'status' => 'success',
+            'name' => $name,
+            'phone' => $phone,
+        ]);
+        
     }
 }

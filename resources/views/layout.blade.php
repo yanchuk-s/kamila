@@ -31,10 +31,10 @@
 </head>
 <body>
 
+@include('okModal')
 @include('responseModal')
 @include('modal')
-
-
+@include('orderColl')
 
 <!--BEGIN PAGE LOADER-->
 <div id="loader-wrapper">
@@ -51,10 +51,10 @@
             <div class="menu-mobile">
                 <ul class="nav-links nav navbar-nav">
                     <li><a href="{{route('home',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Главная</span></a></li>
-                    <li><a href="#" class="main-menu"><span class="text">Правила сотрудничества</span></a></li>
+                    <li><a href="{{route('rulers',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Правила сотрудничества</span></a></li>
                     <li><a href="{{route('blogs-list',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Блог</span></a></li>
                     <li><a href="{{route('responses',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Отзывы</span></a></li>
-                    <li><a href="#" class="main-menu"><span class="text">Контакты</span></a></li>
+                    <li><a href="{{route('contact',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Контакты</span></a></li>
                 </ul>
             </div>
         </div>
@@ -91,6 +91,11 @@
 <script src="/js/jquery.matchHeight.js"></script>
 
 <script src="/js/main.js"></script>
+<script src="/js/modalContact.js"></script>
+
+<script src="/js/contactPage.js"></script>
+
+<script src="/js/orderColl.js"></script>
 
 <script src="/js/showResponseModal.js"></script>
 

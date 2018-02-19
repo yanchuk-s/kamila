@@ -58,7 +58,7 @@
                         <li><a href="{{route('rulers',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Правила сотрудничества</span></a></li>
                         <li><a href="{{route('blogs-list',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Блог</span></a></li>
                         <li><a href="{{route('responses',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Отзывы</span></a></li>
-                        <li><a href="#" class="main-menu"><span class="text">Контакты</span></a></li>
+                        <li><a href="{{route('contact',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Контакты</span></a></li>
                     </ul>
 
                     <div class="btn-anketa btn-wrapper">
