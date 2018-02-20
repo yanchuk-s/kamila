@@ -16,13 +16,13 @@
                                 <ul class="list-meta list-inline list-unstyled">
                                     <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $model->blog->view_count }} Просмотров</li>
                                 </ul>
-                                <div class="share">
-                                    <ul class="list-inline list-unstyled list-socials">
-                                        <li><a href="#" title="Twitter" class="socials-link"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#" title="Facebook" class="socials-link"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#" title="Google Plus" class="socials-link"><i class="fa fa-google-plus">       </i></a></li>
-                                    </ul>
-                                </div>
+                                {{--<div class="share">--}}
+                                    {{--<ul class="list-inline list-unstyled list-socials">--}}
+                                        {{--<li><a href="#" title="Twitter" class="socials-link"><i class="fa fa-twitter"></i></a></li>--}}
+                                        {{--<li><a href="#" title="Facebook" class="socials-link"><i class="fa fa-facebook"></i></a></li>--}}
+                                        {{--<li><a href="#" title="Google Plus" class="socials-link"><i class="fa fa-google-plus">       </i></a></li>--}}
+                                    {{--</ul>--}}
+                                {{--</div>--}}
                             </div>
                             <h1 class="post-title">{{ $model->blog->title }}</h1>
                             <div class="post-single-content">
@@ -61,12 +61,6 @@
                     <div class="widget-sidebar category-wrapper">
                         <h4 class="title">категории</h4>
                         <ul class="category-list list-unstyled">
-                            <li class="category">
-                                <a href="/blogs-list" class="category-link">
-                                    Все
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
 
                             @foreach($model->categoryes as $category)
 

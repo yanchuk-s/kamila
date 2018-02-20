@@ -49,7 +49,7 @@
                 </div>
                 <div class="navbar-header pull-left">
                     <div class="logo">
-                        <a href="/" class="header-logo"><img src="/images/logo/logo.png" alt=""></a>
+                        <a href="{{route('home',['language'=> $model->language=='ru' ? null : $model->language])}}" class="header-logo"><img src="/images/logo/logo.png" alt=""></a>
                     </div>
                 </div>
                 <nav class="navigation pull-right">

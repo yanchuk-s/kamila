@@ -51,7 +51,7 @@ $('#form-send').on('click', function (e) {
 
     if( loginError == false){
         $.ajax({
-            url: 'contact/send',
+            url: '/contact/send',
             type: 'POST',
             data: {
                 name:  name,

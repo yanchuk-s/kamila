@@ -69,18 +69,9 @@
                         <h4 class="title">категории</h4>
                         <ul class="category-list list-unstyled">
 
-                            <li class="category">
-                                <a href="/blogs-list" class="category-link">
-                                   Все
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
+
 
                             @foreach($model->categoryes as $category)
-
-
-
-
 
                                 <li class="category">
                                     <a href="{{route('category',['slug'=>$category->slug ,'language'=> $model->language=='ru' ? null : $model->language])}}" class="category-link">

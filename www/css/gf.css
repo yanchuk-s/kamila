@@ -432,6 +432,11 @@
 }
 
 @media (max-width: 991px){
+
+  .blog-2col-sidebar .grid-item{
+    margin-bottom: 20px!important;
+  }
+
   .slider-medic .typo-adds-on {
     width: 90%;
   }
@@ -446,11 +451,27 @@
     line-height: 18px;
     width: 100%;
   }
+
+  .list-features.list-unstyled.list-inline{
+    display: none;
+  }
+
 }
 
 @media (max-width: 600px){
   .slider-medic .typo-adds-on {
     width: 100%;
+  }
+}
+
+
+@media (max-width: 479px){
+  .blog-smoll-item-img{
+    width: 100%!important;
+  }
+
+  .footer-content.footer-content-style-5 .title-footer{
+    font-size: 20px;
   }
 }
 
