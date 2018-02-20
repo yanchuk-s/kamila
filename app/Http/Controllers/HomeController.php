@@ -12,6 +12,7 @@ use App\User;
 use App\ViewModels\HomeViewModel;
 use Illuminate\Http\Request;
 use App\ViewModels\BlogViewModel;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends LayoutController
@@ -58,17 +59,22 @@ class HomeController extends LayoutController
         $name = request('name');
         $phone = request('phone');
         $email = request('email');
+        $lang = request('lang');
+
         Mail::to('yanchukserhiy96@gmail.com')->send(new callbackModal(
             $name,
             $phone,
             $email
         ));
 
+        App::setLocale($lang);
+
         return response()->json([
             'status' => 'success',
             'name' => $name,
             'phone' => $phone,
-            'email' => $email
+            'email' => $email,
+            "msg" => trans('lang.anketaOk')
         ]);
 
     }
@@ -76,6 +82,9 @@ class HomeController extends LayoutController
     public function orderColl(){
         $name = request('name');
         $phone = request('phone');
+        $lang = request('lang');
+
+        App::setLocale($lang);
 
         Mail::to('yanchukserhiy96@gmail.com')->send(new orderColl(
             $name,
@@ -86,6 +95,7 @@ class HomeController extends LayoutController
             'status' => 'success',
             'name' => $name,
             'phone' => $phone,
+            "msg" => trans('lang.orderPhoneOk')
         ]);
         
     }

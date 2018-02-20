@@ -14,7 +14,7 @@
                             <div class="post-meta post-meta-single-blog">
                                 <div class="post-date"><span class="date"> {{ $model->blog->created_at->format('d') }} </span> {{ $model->blog->created_at->format('m-Y') }}</div>
                                 <ul class="list-meta list-inline list-unstyled">
-                                    <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $model->blog->view_count }} Просмотров</li>
+                                    <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $model->blog->view_count }} {{trans('lang.countView')}}</li>
                                 </ul>
                                 {{--<div class="share">--}}
                                     {{--<ul class="list-inline list-unstyled list-socials">--}}
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="widget-sidebar recent-post-wrapper">
-                        <h4 class="title">ПОХОЖИЕ БЛОГИ</h4>
+                        <h4 class="title">{{trans('lang.popularBlogs')}}</h4>
                         <div class="post-list list-unstyled">
 
                             @foreach($model->randomBlogs as $randomBlog)
@@ -48,7 +48,7 @@
                                     <div class="recent-blog-body">
                                         <a href="{{route('blog',['slug'=>$randomBlog->slug ,'language'=> $model->language=='ru' ? null : $model->language])}}" class="title-a">{{ $randomBlog->title }}</a>
                                         <ul class="list-meta list-inline list-unstyled">
-                                            <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $randomBlog->view_count }} Просмотров</li>
+                                            <li><i class="fa fa-eye" aria-hidden="true"></i>{{ $randomBlog->view_count }} {{trans('lang.countView')}}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="widget-sidebar category-wrapper">
-                        <h4 class="title">категории</h4>
+                        <h4 class="title">{{trans('lang.blogsCategory')}}</h4>
                         <ul class="category-list list-unstyled">
 
                             @foreach($model->categoryes as $category)

@@ -49,6 +49,8 @@ $('#form-send').on('click', function (e) {
     //     console.log(text, name, email);
     // }
 
+    var lang = $('html').attr('lang');
+
     if( loginError == false){
         $.ajax({
             url: '/contact/send',
@@ -56,14 +58,15 @@ $('#form-send').on('click', function (e) {
             data: {
                 name:  name,
                 email: email,
-                text:  text
+                text:  text,
+                lang: lang
             },
             success: function(data){
                 if (data.status == 'success')
                 {
                     $('.close-contact-modal').click();
                     $('.okModal-open').click();
-                    $('.okModal-messege').html('Принято, мы свяжемся с вами!');
+                    $('.okModal-messege').html(data.msg);
 
                     // console.log(data.name, data.email, data.text);
                 }

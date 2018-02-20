@@ -12,11 +12,11 @@
 
                         @if($model->page - 1 == 1)
                             <a href="{{route('category',['slugCaregory'=>$model->category->slug , 'language'=> $model->language=='ru' ? null : $model->language])}}" aria-label="Previous" class="pagi-link">
-                                <span aria-hidden="true">Назад</span>
+                                <span aria-hidden="true">{{trans('lang.pagPrev')}}</span>
                             </a>
                         @else
                             <a href="{{route('category-pagination',['slugCaregory'=>$model->category->slug ,'page'=>$model->page - 1 == 1 ? null : $model->page - 1 ,'language'=> $model->language=='ru' ? null : $model->language])}}" aria-label="Previous" class="pagi-link">
-                                <span aria-hidden="true">Назад</span>
+                                <span aria-hidden="true">{{trans('lang.pagPrev')}}</span>
                             </a>
                         @endif
 
@@ -27,7 +27,7 @@
                 @else
                     <li class="pagi-inner">
                         <a aria-label="Previous" class="pagi-link">
-                            <span aria-hidden="true">Назад</span>
+                            <span aria-hidden="true">{{trans('lang.pagPrev')}}</span>
                         </a>
                     </li>
                 @endif
@@ -70,13 +70,13 @@
 
 
                         <a href="{{route('category-pagination',['slugCaregory'=>$model->category->slug ,'page'=>$model->page + 1 ,'language'=> $model->language=='ru' ? null : $model->language])}}" aria-label="Next" class="pagi-link">
-                            <span aria-hidden="true">Далее</span>
+                            <span aria-hidden="true">{{trans('lang.pagNext')}}</span>
                         </a>
                     </li>
                 @else
                     <li class="pagi-inner">
                         <a aria-label="Next" class="pagi-link">
-                            <span aria-hidden="true">Далее</span>
+                            <span aria-hidden="true">{{trans('lang.pagNext')}}</span>
                         </a>
                     </li>
                 @endif

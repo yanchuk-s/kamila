@@ -8,7 +8,7 @@
                 <div class="col-md-12 content-with-sidebar-right">
 
                         <div class="blogs-section-title blogs-section-title-responses">
-                            <h1>Отзывы</h1>
+                            <h1>{{trans('lang.responsePageTitle')}}</h1>
                         </div>
                     <div class="row">
                         <div class="services-wrapper">
@@ -24,7 +24,7 @@
                                         <h3 class="services-title">{{ $response->user_name }}</h3>
                                         <div class="description"> {{ str_limit($response->response, 80) }}</div>
                                         <div class="response-btn-modal-show">
-                                            <a class="response-show-all" data-response-id="{{ $response->id }}" data-open-model-repsonse> Подробнее </a>
+                                            <a class="response-show-all" data-response-id="{{ $response->id }}" data-open-model-repsonse> {{trans('lang.responseBtn')}} </a>
 
                                         </div>
                                     </div>

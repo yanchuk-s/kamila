@@ -6,6 +6,7 @@ use App\Helpers\Languages;
 use App\Mail\ContactPage;
 use App\ViewModels\ContactViewModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends LayoutController
@@ -22,6 +23,7 @@ class ContactController extends LayoutController
         $name = request('name');
         $email = request('email');
         $text = request('text');
+        $lang = request('lang');
         
         Mail::to('yanchukserhiy96@gmail.com')->send(new ContactPage(
             $name,
@@ -29,11 +31,14 @@ class ContactController extends LayoutController
             $text
         ));
 
+        App::setLocale($lang);
+
         return response()->json([
             'status' => 'success',
             'name' => $name,
             'email' => $email,
-            'text' => $text
+            'text' => $text,
+            "msg" => trans('lang.contactOk')
         ]);
     }
 }

@@ -12,7 +12,7 @@
                     </li>
                     <li>
                         <div class="information-toppar ticker-inner"><i class="icons fa fa-map-marker"></i>
-                            <p class="text">г.Ровно, ул. Гагарина 39, оф.25</p>
+                            <p class="text">{{trans('lang.address')}}</p>
                         </div>
                     </li>
                     <li>
@@ -54,15 +54,15 @@
                 </div>
                 <nav class="navigation pull-right">
                     <ul class="nav-links nav navbar-nav">
-                        <li><a href="{{route('home',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Главная</span></a></li>
-                        <li><a href="{{route('rulers',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Правила сотрудничества</span></a></li>
-                        <li><a href="{{route('blogs-list',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Блог</span></a></li>
-                        <li><a href="{{route('responses',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Отзывы</span></a></li>
-                        <li><a href="{{route('contact',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Контакты</span></a></li>
+                        <li><a href="{{route('home',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">{{trans('lang.nav-general')}}</span></a></li>
+                        <li><a href="{{route('rulers',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">{{trans('lang.nav-rulers')}}</span></a></li>
+                        <li><a href="{{route('blogs-list',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">{{trans('lang.nav-blog')}}</span></a></li>
+                        <li><a href="{{route('responses',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">{{trans('lang.nav-responses')}}</span></a></li>
+                        <li><a href="{{route('contact',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">{{trans('lang.nav-contact')}}</span></a></li>
                     </ul>
 
                     <div class="btn-anketa btn-wrapper">
-                        <a class="btn" data-toggle="modal" data-target=".anketamodal">Заполнить анкету</a>
+                        <a class="btn" data-toggle="modal" data-target=".anketamodal">{{trans('lang.open-anketa-model')}}</a>
                     </div>
 
                 </nav>

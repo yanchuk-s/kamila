@@ -24,6 +24,7 @@ $('#orderCollBtn').on('click', function (e) {
         loginError = true;
     }
     
+    var lang = $('html').attr('lang');
 
     if( loginError == false){
         $.ajax({
@@ -31,7 +32,8 @@ $('#orderCollBtn').on('click', function (e) {
             type: 'POST',
             data: {
                 name:  name,
-                phone:  phone
+                phone:  phone,
+                lang: lang
             },
             success: function(data){
                 if (data.status == 'success')
@@ -40,7 +42,7 @@ $('#orderCollBtn').on('click', function (e) {
                     console.log(data.name, data.phone);
                     $('.close-contact-modal').click();
                     $('.okModal-open').click();
-                    $('.okModal-messege').html('Заявку принято, мы свяжемся с вами!')
+                    $('.okModal-messege').html(data.msg);
                 }
 
             },

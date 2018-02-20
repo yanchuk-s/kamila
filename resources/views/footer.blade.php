@@ -24,26 +24,26 @@
             <div class="contact-form-wrapper">
                 <div class="contact-form-content right">
                     <div class="contact-form-inner">
-                        <h3 class="contact-form-title">Рабочее время
+                        <h3 class="contact-form-title">{{trans('lang.workTime')}}
                         </h3>
                         <div class="working-hours-wrapper">
                             <div class="working-hours-inner">
-                                <div class="date-working">Пн - Пт</div>
+                                <div class="date-working">{{trans('lang.dn1')}}</div>
                                 <div class="time-working">8:00 - 19:00</div>
                             </div>
                             <div class="working-hours-inner">
-                                <div class="date-working">Сб</div>
+                                <div class="date-working">{{trans('lang.dn2')}}</div>
                                 <div class="time-working">8:00 - 20:00</div>
                             </div>
                             <div class="working-hours-inner">
-                                <div class="date-working">Вс</div>
-                                <div class="time-working">Закрыто
+                                <div class="date-working">{{trans('lang.dn3')}}</div>
+                                <div class="time-working">{{trans('lang.workClose')}}
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="contact-form-inner">
-                        <h3 class="contact-form-title">Контактная информация
+                        <h3 class="contact-form-title">{{trans('lang.footerContactInfo')}}
                         </h3>
                         <div class="contact-information-wrapper">
                             <div class="contact-information-inner">
@@ -56,7 +56,7 @@
                             </div>
                             <div class="contact-information-inner">
                                 <div class="info-left"><i class="fa fa-map-marker fa-fw"></i></div>
-                                <div class="info-right">г.Ровно, ул. Гагарина 39, оф.25</div>
+                                <div class="info-right">{{trans('lang.address')}}</div>
                             </div>
                         </div>
                     </div>
@@ -71,11 +71,11 @@
         <div class="footer-base footer-base-style-3">
             <div class="container">
                 <div class="footer-base-right">
-                    Разработка и сопровождение: <a href="http://goldfish-web.com/" target="_blank">Web-Studio Gold Fish
+                    {{trans('lang.goldFish')}}: <a href="http://goldfish-web.com/" target="_blank">Web-Studio Gold Fish
                     </a>
                 </div>
                 <div class="footer-base-left">
-                    &copy; 2018. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</div>
+                    &copy; 2018. {{trans('lang.footerRulersSave')}}</div>
                 <div class="clearfix"> </div>
             </div>
         </div>

@@ -5,22 +5,22 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close close-contact-modal" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Заказать дзвонок</h4>
+                <h4 class="modal-title" id="myModalLabel">{{trans('lang.orderCollTitle')}}</h4>
             </div>
             <div class="modal-body">
-                <p>Укажите Ваш номер и мы вам перезвоним</p>
+                <p>{{trans('lang.orderColl-p')}}</p>
 
                 <form method="post">
                     <div class="form-group form-md-line-input form-md-floating-label">
                         <input name="name" id="orderColl-name" type="text" class="form-control">
-                        <label id="inc-orderColl-name" for="name">Имя</label>
+                        <label id="inc-orderColl-name" for="name">{{trans('lang.orderCollName')}}</label>
                     </div>
                     <div class="form-group form-md-line-input form-md-floating-label">
                         <input name="phone" id="orderColl-phone" type="text" class="form-control">
-                        <label id="inc-orderColl-phone" for="phone">Номер телефона</label>
+                        <label id="inc-orderColl-phone" for="phone">{{trans('lang.orderCollPhone')}}</label>
                     </div>
                     <div class="btn-wrapper">
-                        <button id="orderCollBtn" type="submit" class="btn btn-make-app">Заказать</button>
+                        <button id="orderCollBtn" type="submit" class="btn btn-make-app">{{trans('lang.orderCollBtn')}}</button>
                     </div>
                     <div class="clearfix"> </div>
                 </form>

@@ -8,7 +8,7 @@
                 <div class="col-md-12 content-with-sidebar-right">
 
                         <div class="blogs-section-title blogs-section-title-responses">
-                            <h1>Правила сотрудничества</h1>
+                            <h1>{{trans('lang.rulers-h1')}}</h1>
                         </div>
 
                         <div class="services-wrapper rulers-div">

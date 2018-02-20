@@ -45,7 +45,8 @@ $('#modalContactSend').on('click', function (e) {
         loginError = true;
     }
 
-
+    var lang = $('html').attr('lang');
+    
     if( loginError == false){
         $.ajax({
             url: '/callback',
@@ -53,14 +54,15 @@ $('#modalContactSend').on('click', function (e) {
             data: {
                 name:  name,
                 email: email,
-                phone:  phone
+                phone:  phone,
+                lang: lang
             },
             success: function(data){
                 if (data.status == 'success')
                 {
                     $('.close-contact-modal').click();
                     $('.okModal-open').click();
-                    $('.okModal-messege').html('Анкету принято, мы свяжемся с вами!')
+                    $('.okModal-messege').html(data.msg);
                 }
     
             },

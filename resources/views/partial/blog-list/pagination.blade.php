@@ -12,11 +12,11 @@
 
                         @if($model->page - 1 == 1)
                             <a href=" {{route('blogs-list',['language'=> $model->language=='ru' ? null : $model->language])}}" aria-label="Previous" class="pagi-link">
-                                <span aria-hidden="true">Назад</span>
+                                <span aria-hidden="true">{{trans('lang.pagPrev')}}</span>
                             </a>
                         @else
                             <a href=" {{route('blogs-list-pagination',['page'=>$model->page - 1 == 1 ? '' : $model->page - 1 ,'language'=> $model->language=='ru' ? null : $model->language])}}" aria-label="Previous" class="pagi-link">
-                                <span aria-hidden="true">Назад</span>
+                                <span aria-hidden="true">{{trans('lang.pagPrev')}}</span>
                             </a>
                         @endif
 
@@ -24,7 +24,7 @@
                 @else
                     <li class="pagi-inner">
                         <a aria-label="Previous" class="pagi-link">
-                            <span aria-hidden="true">Назад</span>
+                            <span aria-hidden="true">{{trans('lang.pagPrev')}}</span>
                         </a>
                     </li>
                 @endif
@@ -67,13 +67,13 @@
                     <li class="pagi-inner">
 
                         <a href="{{route('blogs-list-pagination',['page'=>$model->page + 1 ,'language'=> $model->language=='ru' ? null : $model->language])}}" aria-label="Next" class="pagi-link">
-                            <span aria-hidden="true">Далее</span>
+                            <span aria-hidden="true">{{trans('lang.pagNext')}}</span>
                         </a>
                     </li>
                 @else
                     <li class="pagi-inner">
                         <a aria-label="Next" class="pagi-link">
-                            <span aria-hidden="true">Далее</span>
+                            <span aria-hidden="true">{{trans('lang.pagNext')}}</span>
                         </a>
                     </li>
                 @endif

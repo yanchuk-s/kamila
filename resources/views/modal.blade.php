@@ -11,20 +11,20 @@
                 <form method="post">
                     <div class="form-group form-md-line-input form-md-floating-label">
                         <input name="name" id="modalContactName" type="text" class="form-control">
-                        <label id="inc-modal-name" for="name">Имя</label>
+                        <label id="inc-modal-name" for="name">{{trans('lang.modalAnketaName')}}</label>
                     </div>
 
                     <div class="form-group form-md-line-input form-md-floating-label">
                         <input name="email" id="modalContactEmail" type="text" class="form-control">
-                        <label id="inc-modal-email" for="email">Электронный адрес</label>
+                        <label id="inc-modal-email" for="email">{{trans('lang.modalAnketaEmail')}}</label>
                     </div>
 
                     <div class="form-group form-md-line-input form-md-floating-label">
                         <input name="phone" id="modalContactPhone" type="text" class="form-control">
-                        <label id="inc-modal-phone" for="phone">Номер телефона</label>
+                        <label id="inc-modal-phone" for="phone">{{trans('lang.modalAnketaPhone')}}</label>
                     </div>
                     <div class="btn-wrapper">
-                        <button id="modalContactSend" type="submit" class="btn btn-make-app">Отправить</button>
+                        <button id="modalContactSend" type="submit" class="btn btn-make-app">{{trans('lang.modalAnketaBtn')}}</button>
                     </div>
                     <div class="clearfix"> </div>
                 </form>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{\App::getLocale()}}">
 <head>
     <title>KamilaAgency {{$model->metaTitle}}</title>
 
@@ -50,11 +50,11 @@
         <div class="header-main">
             <div class="menu-mobile">
                 <ul class="nav-links nav navbar-nav">
-                    <li><a href="{{route('home',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Главная</span></a></li>
-                    <li><a href="{{route('rulers',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Правила сотрудничества</span></a></li>
-                    <li><a href="{{route('blogs-list',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Блог</span></a></li>
-                    <li><a href="{{route('responses',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Отзывы</span></a></li>
-                    <li><a href="{{route('contact',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">Контакты</span></a></li>
+                    <li><a href="{{route('home',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">{{trans('lang.mob-nav-general')}}</span></a></li>
+                    <li><a href="{{route('rulers',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">{{trans('lang.mob-nav-rulers')}}</span></a></li>
+                    <li><a href="{{route('blogs-list',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">{{trans('lang.mob-nav-blog')}}</span></a></li>
+                    <li><a href="{{route('responses',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">{{trans('lang.mob-nav-responses')}}</span></a></li>
+                    <li><a href="{{route('contact',['language'=> $model->language=='ru' ? null : $model->language])}}" class="main-menu"><span class="text">{{trans('lang.mob-nav-contact')}}</span></a></li>
                 </ul>
             </div>
         </div>
