@@ -57,7 +57,7 @@
                                     </div>
 
                                     <p class="incorect-input incorect-image-path"><i class="fas fa-exclamation-triangle"></i>Выберите картинку!</p>
-
+                                    <span class="imgtosize">Картинка не больше 100px х 100px!</span>
                                     <div class="input-group choose-img">
                                         <label class="input-group-btn">
                                             <span class="btn-choose-img">

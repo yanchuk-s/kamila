@@ -66,6 +66,10 @@ $('#add-response').on('click', function (e) {
                     $('#response-input-img').val('');
 
                     $('.input-file-name').val('');
+
+                    setTimeout(function () {
+                        location.href = '/admin/response';
+                    }, 2000);
                     
                 }
     

@@ -25,13 +25,15 @@ $('#admin-login').on('click', function (e) {
 
     if (admin_email.length < 5 || !validateEmail(admin_email)) {
         clearInput($("#admin-email"));
-        $('#admin-email').attr('placeholder', 'Введите корректную электронный адрес');
+        // $('#admin-email').attr('placeholder', 'Введите корректную электронный адрес');
+        $('#loginEmailError').html('Введите корректный электронный адрес');
         loginError = true;
     }
 
     if(admin_password.length < 6){
         clearInput($("#admin-password"));
-        $('#admin-password').attr('placeholder', 'Не менее 6 символов');
+        // $('#admin-password').attr('placeholder', 'Не менее 6 символов');
+        $('#loginPassError').html('Не менее 6 символов');
         loginError = true;
     }
     

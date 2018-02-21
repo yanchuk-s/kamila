@@ -35,11 +35,11 @@
                     {{ csrf_field() }}
                     <div class="form-group form-md-line-input form-md-floating-label">
                         <input id="admin-email" type="text" class="form-control">
-                        <label for="admin-email">Электронный адрес</label>
+                        <label id="loginEmailError" for="admin-email">Электронный адрес</label>
                     </div>
                     <div class="form-group form-md-line-input form-md-floating-label">
                         <input id="admin-password" type="password" class="form-control">
-                        <label for="admin-password">Пароль</label>
+                        <label id="loginPassError" for="admin-password">Пароль</label>
                     </div>
                     {{--<div class="form-group form-md-line-input login-checkbox">--}}
                     {{--<input id="save-me"  type="checkbox" class="form-control">--}}

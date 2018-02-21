@@ -705,3 +705,17 @@
 .rulers-adm{
     margin-bottom: 40px;
 }
+
+
+#loginEmailError,
+#loginPassError{
+    font-size: 13px;
+}
+
+
+
+.imgtosize{
+    padding: 5px 0;
+    color: #0d3625;
+    font-weight: 600;
+}

@@ -14,20 +14,22 @@ function incorectBorder(elem){
     elem.addClass('incorectInput');
 }
 
-$('#addSlider').on('click', function (e) {
+$('#add-blog').on('click', function (e) {
     e.preventDefault();
 
-    var title_ru = $('#slider-title-ru').val();
-    var title_uk = $('#slider-title-uk').val();
-    var text_ru = $('#slider-text-ru').val();
-    var text_uk = $('#slider-text-uk').val();
-    var image_path = $('#slider-input-img').val();
+    var title_ru = $('#blog-title-ru').val();
+    var title_uk = $('#blog-title-uk').val();
+    var description_ru = CKEDITOR.instances.editorru.getData();
+    var description_uk = CKEDITOR.instances.editoruk.getData();
+    var category_id = $('.admin-select option:selected').val();
+    var image_path = $('#blog-input-img').val();
 
 
 
     // var file_data = $('#blog-input-img').prop('files')[0];
-    var form_data = new FormData(document.forms.adminAddSlider);
-
+    var form_data = new FormData(document.forms.adminAddBlog);
+    form_data.append('descriptionRu', description_ru);
+    form_data.append('descriptionUk', description_uk);
     // form_data.append('file', file_data);
     
 
@@ -53,13 +55,18 @@ $('#addSlider').on('click', function (e) {
         loginError = true;
     }
     
+    if (category_id == 0) {
+        incorectBorder($(".admin-select"));
+        $('.incorect-input').show();
+        loginError = true;
+    }
     
-    if (text_ru.length == 0) {
+    if (description_ru.length == 0) {
         $('.incorect-editor-ru').show();
         loginError = true;
     }
     
-    if (text_uk.length == 0) {
+    if (description_uk.length == 0) {
         $('.incorect-editor-uk').show();
         loginError = true;
     }
@@ -75,7 +82,7 @@ $('#addSlider').on('click', function (e) {
     
     if( loginError == false){
         $.ajax({
-            url: '/admin/add-slider/add',
+            url: '/admin/add-blog/add',
             type: 'POST',
             contentType: false,       // The content type used when sending data to the server.
             cache: false,             // To unable request pages to be cached
@@ -97,16 +104,15 @@ $('#addSlider').on('click', function (e) {
                 if (data.status == 'success')
                 {
                     $('.admin-modal-open').click();
-                    $('.admin-modal-messege').html('Слайдер додан!');
 
-                    $('.input-file-name').val('');
-                    $('#slider-title-ru').val('');
-                    $('#slider-title-uk').val('');
-                    $('#slider-text-ru').val('');
-                    $('#slider-text-uk').val('');
-                    $('#slider-input-img').val('');
-                    
-                    
+                    $('.admin-modal-messege').html('Блог додан!');
+
+
+
+                    setTimeout(function () {
+                        location.href = '/admin';
+                    }, 2000);
+    
                 }
     
             },
@@ -115,8 +121,8 @@ $('#addSlider').on('click', function (e) {
             }
         });
     }
-
-
+    
+    console.log(title_ru,title_uk,description_ru,description_uk,category_id,image_path );
 
 });
 

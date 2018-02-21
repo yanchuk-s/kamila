@@ -54,6 +54,10 @@ $('#add-category').on('click', function (e) {
 
                     $("#category_ru").val('');
                     $("#category_uk").val('');
+
+                    setTimeout(function () {
+                        location.href = '/admin/category';
+                    }, 2000);
                 }
 
             },

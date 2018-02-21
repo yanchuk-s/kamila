@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\Languages;
 use App\Mail\ContactPage;
+use App\Mail\ContactPageUser;
 use App\ViewModels\ContactViewModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -29,6 +30,10 @@ class ContactController extends LayoutController
             $name,
             $email,
             $text
+        ));
+
+        Mail::to($email)->send(new ContactPageUser(
+            $name
         ));
 
         App::setLocale($lang);

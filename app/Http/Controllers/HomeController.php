@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\Helpers\Languages;
 use App\Mail\callbackModal;
+use App\Mail\callbackModalUser;
 use App\Mail\OrderColl;
 use App\Response;
 use App\Slider;
@@ -67,6 +68,10 @@ class HomeController extends LayoutController
             $email
         ));
 
+        Mail::to($email)->send(new callbackModalUser(
+            $name
+        ));
+
         App::setLocale($lang);
 
         return response()->json([
@@ -90,7 +95,7 @@ class HomeController extends LayoutController
             $name,
             $phone
         ));
-
+        
         return response()->json([
             'status' => 'success',
             'name' => $name,

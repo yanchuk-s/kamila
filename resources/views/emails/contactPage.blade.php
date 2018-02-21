@@ -3,7 +3,7 @@
 
 Имя: {{$name}}<br>
 Email: {{$email}}<br>
-Номер телефона: {{$text}}<br>
+Сообщение: {{$text}}<br>
 
 {{--@component('mail::button', ['url' => ''])--}}
 {{--Button Text--}}

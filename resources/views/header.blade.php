@@ -27,7 +27,7 @@
                 <ul class="list-inline list-unstyled social-topbar">
                     <li>
                         <div class="lang">
-                            <a href="{{route('home',['language'=> 'uk'])}}">Укр</a> /
+                            <a href="{{url()->current()}}/uk">Укр</a> /
                             <a href="{{route('home',['language'=> null])}}">Рус</a>
                         </div>
                     </li>

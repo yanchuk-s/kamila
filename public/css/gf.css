@@ -97,6 +97,7 @@
 
 .slider-medic .slide-5 .header{
   color: #fff;
+  text-transform: none!important;
 }
 
 .description{
@@ -927,7 +928,7 @@ margin-top: 20px;
 
 
 .response-item .services-content:before {
-  border: 2px solid #fafcfd;
+  border: 2px solid #ffc8da;
 }
 
 .footer-content.footer-content-style-5 .info-footer {
@@ -942,9 +943,8 @@ margin-top: 20px;
   font-size: 15px;
 }
 
-.response-item .services-content:after{
-  background-color: rgba(250, 252, 253, 0.9);
-
+.response-item .services-content:after {
+  background-color: #ffc8da;
 }
 
 
@@ -999,12 +999,12 @@ body{
 }
 
 .contact-page .contact-info:before{
-  border: 2px solid #fafcfd;
+  border: 2px solid #ffc8da;
 }
 
 .contact-page .contact-info:after{
-  border: 2px solid #fafcfd;
-  background-color: #fafcfd;
+  border: 2px solid #ffc8da;
+  background-color: #ffc8da;
 }
 
 .contact-page .contact-info .btn-for-icon i{
@@ -1018,7 +1018,7 @@ body{
 
 
 .contact-page .contact-form-inner{
-  border: 2px solid #fafcfd;
+  border: 2px solid #ffc8da;
 }
 .contact-page .contact-form-inner .typo-line{
   padding: 0;
@@ -1027,6 +1027,10 @@ body{
 .contact-page .contact-form-inner .sub-header{
   font-size: 17px;
   color: #e1004a;
+}
+
+.contact-form-inner .appointment-form .form-md-line-input .form-control:focus{
+  border-bottom: 2px solid #e1004a;
 }
 
 .contact-page .form-md-line-input .form-control.form-textarea{
