@@ -14,17 +14,22 @@ function incorectBorder(elem){
     elem.addClass('incorectInput');
 }
 
+
+
 $('#add-blog').on('click', function (e) {
     e.preventDefault();
 
     var title_ru = $('#blog-title-ru').val();
     var title_uk = $('#blog-title-uk').val();
-    var description_ru = CKEDITOR.instances.editorru.getData();
-    var description_uk = CKEDITOR.instances.editoruk.getData();
+    var description_ru = $('#addru').summernote('code');
+     var description_uk = $('#adduk').summernote('code');
+    // var description_ru = CKEDITOR.instances.editorru.getData();
+    // var description_uk = CKEDITOR.instances.editoruk.getData();
     var category_id = $('.admin-select option:selected').val();
     var image_path = $('#blog-input-img').val();
 
 
+    console.log(description_ru, description_uk);
 
     // var file_data = $('#blog-input-img').prop('files')[0];
     var form_data = new FormData(document.forms.adminAddBlog);
@@ -75,12 +80,15 @@ $('#add-blog').on('click', function (e) {
         $('.incorect-image-path').show();
         loginError = true;
     }
-    
-    
-    
-    
+
+
+
+
     
     if( loginError == false){
+        $('#add-blog span').hide();
+        $('#add-blog .spinner').show();
+        
         $.ajax({
             url: '/admin/add-blog/add',
             type: 'POST',
@@ -107,7 +115,8 @@ $('#add-blog').on('click', function (e) {
 
                     $('.admin-modal-messege').html('Блог додан!');
 
-
+                    $('#add-blog span').show();
+                    $('#add-blog .spinner').hide();
 
                     setTimeout(function () {
                         location.href = '/admin';

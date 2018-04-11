@@ -61,7 +61,14 @@
                                                             <label id="inc-form-text" for="form-text">{{trans('lang.collbackFormText')}}</label>
                                                         </div>
                                                         <div class="btn-wrapper">
-                                                            <button id="form-send" type="submit" class="btn">{{trans('lang.collbackFormBtn')}}</button>
+                                                            <button id="form-send" type="submit" class="btn btn-contact-page">
+                                                                <div class="spinner">
+                                                                    <div class="bounce1 home"></div>
+                                                                    <div class="bounce2 home"></div>
+                                                                    <div class="bounce3 home"></div>
+                                                                </div>
+                                                                <span>{{trans('lang.collbackFormBtn')}}</span>
+                                                            </button>
                                                         </div>
                                                     </form>
                                                     <div class="clearfix"> </div>

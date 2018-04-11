@@ -16,7 +16,7 @@ function incorectBorder(elem){
 
 $('#addSlider').on('click', function (e) {
     e.preventDefault();
-
+    
     var title_ru = $('#slider-title-ru').val();
     var title_uk = $('#slider-title-uk').val();
     var text_ru = $('#slider-text-ru').val();
@@ -74,6 +74,10 @@ $('#addSlider').on('click', function (e) {
     
     
     if( loginError == false){
+
+        $('#addSlider span').hide();
+        $('#addSlider .spinner').show();
+        
         $.ajax({
             url: '/admin/add-slider/add',
             type: 'POST',
@@ -106,6 +110,9 @@ $('#addSlider').on('click', function (e) {
                     $('#slider-text-uk').val('');
                     $('#slider-input-img').val('');
 
+                    $('#addSlider span').show();
+                    $('#addSlider .spinner').hide();
+                    
                     setTimeout(function () {
                         location.href = '/admin/sliders';
                     }, 2000);

@@ -161,3 +161,38 @@ Route::post('contact/send','ContactController@send');
 Route::post('/callback','HomeController@collbackModal');
 
 Route::post('/orderColl','HomeController@orderColl');
+
+
+
+Route::post('/upload/images', 'AdminBlogController@uploadImages');
+
+
+//CLIENTS
+
+
+
+Route::get('/admin/clients', 'AdminClientController@showClients');
+
+Route::get('/admin/clients/{page}', 'AdminClientController@indexPagination')
+    ->where([
+        'page' => '^[2-9]{1}|[1-9]{1}[0-9]+$'
+    ]);
+
+Route::post('/admin/client/delete', 'AdminClientController@deleteClient');
+
+Route::get('/admin/add-clients', 'AdminClientController@addClientForm');
+
+Route::post('/admin/add-clients/add', 'AdminClientController@addClient');
+
+Route::post('/admin/add-clients/edit', 'AdminClientController@editClient');
+
+
+Route::get('/admin/client/{id}', 'AdminClientController@clientIndex')
+    ->where([
+        'id' => '^[a-z0-9-]+$'
+    ])->name('client');
+
+Route::get('/admin/edit-client/{id}', 'AdminClientController@showClientEdit')
+    ->where([
+        'id' => '^[a-z0-9-]+$'
+    ])->name('client');

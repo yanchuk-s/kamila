@@ -20,7 +20,15 @@
                         <label id="inc-orderColl-phone" for="phone">{{trans('lang.orderCollPhone')}}</label>
                     </div>
                     <div class="btn-wrapper">
-                        <button id="orderCollBtn" type="submit" class="btn btn-make-app">{{trans('lang.orderCollBtn')}}</button>
+
+                        <button id="orderCollBtn" type="submit" class="btn btn-make-app modal-btn">
+                            <div class="spinner">
+                                <div class="bounce1 home"></div>
+                                <div class="bounce2 home"></div>
+                                <div class="bounce3 home"></div>
+                            </div>
+                            <span>{{trans('lang.orderCollBtn')}}</span>
+                        </button>
                     </div>
                     <div class="clearfix"> </div>
                 </form>

@@ -48,6 +48,10 @@ $('#modalContactSend').on('click', function (e) {
     var lang = $('html').attr('lang');
     
     if( loginError == false){
+
+        $('#modalContactSend span').hide();
+        $('#modalContactSend .spinner').show();
+
         $.ajax({
             url: '/callback',
             type: 'POST',
@@ -62,6 +66,10 @@ $('#modalContactSend').on('click', function (e) {
                 {
                     $('.close-contact-modal').click();
                     $('.okModal-open').click();
+                    
+                    $('#modalContactSend span').show();
+                    $('#modalContactSend .spinner').hide();
+
                     $('.okModal-messege').html(data.msg);
                 }
     

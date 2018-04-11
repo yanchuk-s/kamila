@@ -52,6 +52,8 @@ $('#form-send').on('click', function (e) {
     var lang = $('html').attr('lang');
 
     if( loginError == false){
+        $('#form-send span').hide();
+        $('#form-send .spinner').show();
         $.ajax({
             url: '/contact/send',
             type: 'POST',
@@ -66,6 +68,8 @@ $('#form-send').on('click', function (e) {
                 {
                     $('.close-contact-modal').click();
                     $('.okModal-open').click();
+                    $('#form-send span').show();
+                    $('#form-send .spinner').hide();
                     $('.okModal-messege').html(data.msg);
 
                     // console.log(data.name, data.email, data.text);

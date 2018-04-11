@@ -33,10 +33,13 @@ $('#add-category').on('click', function (e) {
         loginError = true;
     }
     
-    console.log(name_ru , name_uk);
     
     
     if( loginError == false){
+
+        $('#add-category span').hide();
+        $('#add-category .spinner').show();
+        
         $.ajax({
             url: '/admin/add-category/add',
             type: 'POST',
@@ -54,6 +57,9 @@ $('#add-category').on('click', function (e) {
 
                     $("#category_ru").val('');
                     $("#category_uk").val('');
+
+                    $('#add-category span').show();
+                    $('#add-category .spinner').hide();
 
                     setTimeout(function () {
                         location.href = '/admin/category';

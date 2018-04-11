@@ -24,6 +24,14 @@
                                 </li>
 
                                 <li>
+                                    <a href="/admin/clients"><i class="fas fa-pen-square"></i>Анкеты</a>
+                                </li>
+
+                                <li>
+                                    <a href="/admin/add-clients"><i class="fas fa-plus-circle"></i>Добавить Анкету</a>
+                                </li>
+
+                                <li>
                                     <a href="/admin/sliders"><i class="fas fa-images"></i>Слайдер</a>
                                 </li>
 

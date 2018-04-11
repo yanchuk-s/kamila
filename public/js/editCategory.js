@@ -38,6 +38,10 @@ $('#edit-category').on('click', function (e) {
     
     
     if( loginError == false){
+
+        $('#add-category span').hide();
+        $('#add-category .spinner').show();
+
         $.ajax({
             url: '/admin/edit-category/edit',
             type: 'POST',
@@ -53,7 +57,8 @@ $('#edit-category').on('click', function (e) {
                     $('.admin-modal-open').click();
 
                     $('.admin-modal-messege').html('Категория изменена!');
-
+                    $('#add-category span').show();
+                    $('#add-category .spinner').hide();
                     setTimeout(function () {
                         location.href = '/admin/category';
                     }, 2000);

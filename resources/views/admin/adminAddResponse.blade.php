@@ -71,7 +71,14 @@
                                         <textarea name="responsDescr" id="respons-descr" placeholder="Отзыв" ></textarea>
                                     </div>
                                     <div class="btn-wrapper">
-                                        <button type="submit" id="add-response" class="btn btn-make-app">Добавить</button>
+                                        <button type="submit" id="add-response" class="btn btn-make-app btn-spiner">
+                                            <div class="spinner">
+                                                <div class="bounce1"></div>
+                                                <div class="bounce2"></div>
+                                                <div class="bounce3"></div>
+                                            </div>
+                                            <span>Добавить</span>
+                                        </button>
                                     </div>
                                     <div class="clearfix"> </div>
                                 </form>

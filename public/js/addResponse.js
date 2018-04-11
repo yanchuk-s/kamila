@@ -12,7 +12,7 @@ function clearInput(elem){
 
 $('#add-response').on('click', function (e) {
     e.preventDefault();
-
+    
     var user_name = $('#user_name').val();
     var response = $('#respons-descr').val();
 
@@ -43,6 +43,10 @@ $('#add-response').on('click', function (e) {
     console.log(form_data);
     
     if( loginError == false){
+        
+        $('#add-response span').hide();
+        $('#add-response .spinner').show();
+        
         $.ajax({
             url: '/admin/add-response/add',
             type: 'POST',
@@ -67,6 +71,9 @@ $('#add-response').on('click', function (e) {
 
                     $('.input-file-name').val('');
 
+                    $('#add-response span').show();
+                    $('#add-response .spinner').hide();
+                    
                     setTimeout(function () {
                         location.href = '/admin/response';
                     }, 2000);

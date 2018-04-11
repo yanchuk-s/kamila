@@ -27,8 +27,8 @@
                 <ul class="list-inline list-unstyled social-topbar">
                     <li>
                         <div class="lang">
-                            <a href="{{url()->current()}}/uk">Укр</a> /
-                            <a href="{{route('home',['language'=> null])}}">Рус</a>
+                            <a href="{{ends_with(url()->current(),'/uk') ? '' : url()->current().'/uk'}}">Укр</a> /
+                            <a href="{{ends_with(url()->current(),'/uk') ? str_replace('/uk', '', url()->current()) : url()->current()}}">Рус</a>
                         </div>
                     </li>
                     <li><a href="#" class="link twitter"><i class="fa fa-twitter"></i></a></li>

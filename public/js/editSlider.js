@@ -73,6 +73,10 @@ $('#editSlider').on('click', function (e) {
 
     
     if( loginError == false){
+
+        $('#editSlider span').hide();
+        $('#editSlider .spinner').show();
+
         $.ajax({
             url: '/admin/edit-slider/edit',
             type: 'POST',
@@ -97,6 +101,10 @@ $('#editSlider').on('click', function (e) {
                 {
                     $('.admin-modal-open').click();
                     $('.admin-modal-messege').html('Слайдер изменено!');
+
+
+                    $('#editSlider span').show();
+                    $('#editSlider .spinner').hide();
 
                     setTimeout(function () {
                         location.href = '/admin/sliders';

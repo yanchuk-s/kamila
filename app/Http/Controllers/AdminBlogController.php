@@ -6,8 +6,11 @@ use App\Blog;
 use App\Category;
 use App\Helpers\Languages;
 use App\ViewModels\AdminBlogViewModel;
+use Carbon\Carbon;
 use DebugBar\DebugBar;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManager;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 class AdminBlogController extends LayoutController
 {
@@ -177,6 +180,50 @@ class AdminBlogController extends LayoutController
 
         return response()->json([
             'status' => 'success'
+        ]);
+    }
+
+    public function uploadImages()
+    {
+        $imageBase64 = request()->get('image');
+
+        if (!$imageBase64) {
+            return response()->json([
+                'status' => ' 1error'
+            ]);
+        }
+
+        $imageBase64 = stristr($imageBase64, ';base64,', false);
+
+
+        $imageBase64 = substr($imageBase64, strlen(';base64,'));
+
+//        \Debugbar::info($imageBase64);
+
+
+        $img = base64_decode($imageBase64);
+        $date = date('Y-m-d-H-i-s');
+        $filename = $date . '.jpg';
+        $file_img_path = "images/uploads/$filename";
+
+        if ($img!='')
+        {
+            $manager = new ImageManager(array('driver' => 'gd'));
+            try {
+                $manager->make($img)
+                    ->resize(740, null, function ($constraint) { $constraint->aspectRatio(); })
+                    ->save($file_img_path, 50);
+            } catch (\Exception $e) {
+                return response()->json([
+                    'status' => '2error'
+                ]);
+            }
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'url' => '/' . $file_img_path
+
         ]);
     }
     

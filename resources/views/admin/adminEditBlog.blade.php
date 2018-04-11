@@ -27,7 +27,7 @@
 
     {{--<script src="https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>--}}
 
-    <script src="https://cdn.ckeditor.com/4.8.0/standard-all/ckeditor.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 
 </head>
 <body>
@@ -101,21 +101,40 @@
                                         <input type="text" class="form-control input-file-name" readonly disabled value="{{$blog->image_path}}">
                                     </div>
 
-                                    <div class="description-blog-uk">
-                                        <p class="incorect-input incorect-editor-uk"><i class="fas fa-exclamation-triangle"></i>Введите текст на Украинском!</p>
-                                        <label for="editoruk">Текст на Украинском:</label>
-                                        <textarea id="editoruk">{{$blog->description_uk}}</textarea>
-                                    </div>
+                                    {{--<div class="description-blog-uk">--}}
+                                        {{--<p class="incorect-input incorect-editor-uk"><i class="fas fa-exclamation-triangle"></i>Введите текст на Украинском!</p>--}}
+                                        {{--<label for="editoruk">Текст на Украинском:</label>--}}
+                                        {{--<textarea id="editoruk">{{$blog->description_uk}}</textarea>--}}
+                                    {{--</div>--}}
 
-                                    <div class="description-blog-ru">
+                                    {{--<div class="description-blog-ru">--}}
+                                        {{--<p class="incorect-input incorect-editor-ru"><i class="fas fa-exclamation-triangle"></i>Введите текст на Русском!</p>--}}
+                                        {{--<label for="editorru">Текст на Русском:</label>--}}
+                                        {{--<textarea id="editorru">{{$blog->description_ru}}</textarea>--}}
+                                    {{--</div>--}}
+
+
+                                    <form method="post">
+                                        <p class="incorect-input incorect-editor-uk"><i class="fas fa-exclamation-triangle"></i>Введите текст на Украинском!</p>
+                                        <label for="editblogsummUk">Текст на Украинском:</label>
+                                        <div id="editblogsummUk">{!!$blog->description_uk!!}</div>
+                                    </form>
+
+                                    <form method="post">
                                         <p class="incorect-input incorect-editor-ru"><i class="fas fa-exclamation-triangle"></i>Введите текст на Русском!</p>
-                                        <label for="editorru">Текст на Русском:</label>
-                                        <textarea id="editorru">{{$blog->description_uk}}</textarea>
-                                    </div>
+                                        <label for="editblogsummRu">Текст на Русском:</label>
+                                        <div id="editblogsummRu">{!!$blog->description_ru!!}</div>
+                                    </form>
 
 
                                     <div class="btn-wrapper">
-                                        <button type="submit" id="edit-blog" class="btn btn-make-app">Сохранить
+                                        <button type="submit" id="edit-blog" class="btn btn-make-app admin-add-some btn-spiner">
+                                            <div class="spinner">
+                                                <div class="bounce1"></div>
+                                                <div class="bounce2"></div>
+                                                <div class="bounce3"></div>
+                                            </div>
+                                            <span>Сохранить</span>
                                         </button>
                                     </div>
                                     <div class="clearfix"> </div>
@@ -158,6 +177,9 @@
 <script src="/js/jquery.matchHeight.js"></script>
 
 <script src="/js/main.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+<script src="/js/summeredit.js"></script>
 
 <script src="/js/ckedit.js"></script>
 

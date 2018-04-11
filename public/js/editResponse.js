@@ -39,6 +39,10 @@ $('#edit-response').on('click', function (e) {
     console.log(form_data);
     
     if( loginError == false){
+
+        $('#edit-response span').show();
+        $('#edit-response .spinner').hide();
+
         $.ajax({
             url: '/admin/edit-response/edit',
             type: 'POST',
@@ -56,6 +60,9 @@ $('#edit-response').on('click', function (e) {
                     $('.admin-modal-open').click();
     
                     $('.admin-modal-messege').html('Отзыв изменено!');
+
+                    $('#edit-response span').hide();
+                    $('#edit-response .spinner').show();
 
                     setTimeout(function () {
                         location.href = '/admin/response';

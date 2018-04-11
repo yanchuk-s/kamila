@@ -24,7 +24,14 @@
                         <label id="inc-modal-phone" for="phone">{{trans('lang.modalAnketaPhone')}}</label>
                     </div>
                     <div class="btn-wrapper">
-                        <button id="modalContactSend" type="submit" class="btn btn-make-app">{{trans('lang.modalAnketaBtn')}}</button>
+                        <button id="modalContactSend" type="submit" class="btn btn-make-app modal-btn">
+                            <div class="spinner">
+                                <div class="bounce1 home"></div>
+                                <div class="bounce2 home"></div>
+                                <div class="bounce3 home"></div>
+                            </div>
+                            <span>{{trans('lang.modalAnketaBtn')}}</span>
+                        </button>
                     </div>
                     <div class="clearfix"> </div>
                 </form>

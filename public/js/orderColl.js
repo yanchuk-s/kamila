@@ -27,6 +27,8 @@ $('#orderCollBtn').on('click', function (e) {
     var lang = $('html').attr('lang');
 
     if( loginError == false){
+        $('#orderCollBtn span').hide();
+        $('#orderCollBtn .spinner').show();
         $.ajax({
             url: '/orderColl',
             type: 'POST',
@@ -42,6 +44,8 @@ $('#orderCollBtn').on('click', function (e) {
                     console.log(data.name, data.phone);
                     $('.close-contact-modal').click();
                     $('.okModal-open').click();
+                    $('#orderCollBtn span').show();
+                    $('#orderCollBtn .spinner').hide();
                     $('.okModal-messege').html(data.msg);
                 }
 

@@ -19,8 +19,8 @@ $('#edit-blog').on('click', function (e) {
 
     var title_ru = $('#blog-title-ru').val();
     var title_uk = $('#blog-title-uk').val();
-    var description_ru = CKEDITOR.instances.editorru.getData();
-    var description_uk = CKEDITOR.instances.editoruk.getData();
+    var description_ru = $('#editblogsummRu').summernote('code');
+    var description_uk = $('#editblogsummUk').summernote('code');
     var category_id = $('.admin-select option:selected').val();
     var image_path = $('#blog-input-img').val();
 
@@ -82,6 +82,10 @@ $('#edit-blog').on('click', function (e) {
     console.log(form_data);
     
     if( loginError == false){
+
+        $('#edit-blog span').hide();
+        $('#edit-blog .spinner').show();
+
         $.ajax({
             url: '/admin/edit-blog/edit',
             type: 'POST',

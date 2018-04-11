@@ -16,7 +16,7 @@ function incorectBorder(elem){
 
 $('#add-rulers-save').on('click', function (e) {
     e.preventDefault();
-
+   
 
     var text_ru = CKEDITOR.instances.editorru.getData();
     var text_uk = CKEDITOR.instances.editoruk.getData();
@@ -44,6 +44,8 @@ $('#add-rulers-save').on('click', function (e) {
     
     
     if( loginError == false){
+        $('#add-rulers-save span').hide();
+        $('#add-rulers-save .spinner').show();
         $.ajax({
             url: '/admin/rulers/edit',
             type: 'POST',
@@ -55,7 +57,8 @@ $('#add-rulers-save').on('click', function (e) {
                 if (data.status == 'success')
                 {
                     $('.admin-modal-open').click();
-    
+                    $('#add-rulers-save span').show();
+                    $('#add-rulers-save .spinner').hide();
                     $('.admin-modal-messege').html('Сохранено!');
                     
                 }

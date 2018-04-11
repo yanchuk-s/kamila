@@ -10,7 +10,9 @@
             <div class="modal-body">
                <p class="admin-modal-messege"></p>
 
-                <a class="btn btn-adm-mod" data-dismiss="modal" aria-hidden="true">OK</a>
+                <a class="btn btn-adm-mod" data-dismiss="modal" aria-hidden="true">
+
+                    OK</a>
             </div>
         </div>
     </div>

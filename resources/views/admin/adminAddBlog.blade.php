@@ -23,11 +23,15 @@
 
     <link type="text/css" rel="stylesheet" href="/css/admin/admin.css">
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 
     {{--<script src="https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>--}}
 
-    <script src="https://cdn.ckeditor.com/4.8.0/standard-all/ckeditor.js"></script>
+    {{--<script src="https://cdn.ckeditor.com/4.8.0/standard-all/ckeditor.js"></script>--}}
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+
 
 </head>
 <body>
@@ -91,20 +95,35 @@
                                     </div>
 
                                     <div class="description-blog-uk">
-                                        <p class="incorect-input incorect-editor-uk"><i class="fas fa-exclamation-triangle"></i>Введите текст на Украинском!</p>
-                                        <label for="editoruk">Текст на Украинском:</label>
-                                        <textarea id="editoruk"></textarea>
+                                        <form method="post">
+                                            <p class="incorect-input incorect-editor-uk"><i class="fas fa-exclamation-triangle"></i>Введите текст на Украинском!</p>
+                                            <label for="adduk">Текст на Украинском:</label>
+                                            <div id="adduk"></div>
+                                        </form>
+                                    </div>
+                                    <div class="description-blog-ru">
+                                        <form method="post">
+                                            <p class="incorect-input incorect-editor-ru"><i class="fas fa-exclamation-triangle"></i>Введите текст на Русском!</p>
+                                            <label for="addru">Текст на Русском:</label>
+                                            <div id="addru"></div>
+                                        </form>
                                     </div>
 
-                                    <div class="description-blog-ru">
-                                        <p class="incorect-input incorect-editor-ru"><i class="fas fa-exclamation-triangle"></i>Введите текст на Русском!</p>
-                                        <label for="editorru">Текст на Русском:</label>
-                                        <textarea id="editorru"></textarea>
-                                    </div>
+                                    {{--<div class="description-blog-ru">--}}
+                                        {{--<p class="incorect-input incorect-editor-ru"><i class="fas fa-exclamation-triangle"></i>Введите текст на Русском!</p>--}}
+                                        {{--<label for="editorru">Текст на Русском:</label>--}}
+                                        {{--<textarea id="editorru"></textarea>--}}
+                                    {{--</div>--}}
 
 
                                     <div class="btn-wrapper">
-                                        <button type="submit" id="add-blog" class="btn btn-make-app">Добавить
+                                        <button type="submit" id="add-blog" class="btn btn-make-app admin-add-some btn-spiner">
+                                            <div class="spinner">
+                                                <div class="bounce1"></div>
+                                                <div class="bounce2"></div>
+                                                <div class="bounce3"></div>
+                                            </div>
+                                            <span>Добавить</span>
                                         </button>
                                     </div>
                                     <div class="clearfix"> </div>
@@ -147,6 +166,9 @@
 <script src="/js/jquery.matchHeight.js"></script>
 
 <script src="/js/main.js"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+<script src="/js/summeredit.js"></script>
 
 <script src="/js/ckedit.js"></script>
 

@@ -73,7 +73,14 @@
                                         <textarea name="responsDescr" id="respons-descr" placeholder="Отзыв">{{$response->response}}</textarea>
                                     </div>
                                     <div class="btn-wrapper">
-                                        <button type="submit" id="edit-response" class="btn btn-make-app">Сохранить</button>
+                                        <button type="submit" id="edit-response" class="btn btn-make-app btn-spiner">
+                                            <div class="spinner">
+                                                <div class="bounce1"></div>
+                                                <div class="bounce2"></div>
+                                                <div class="bounce3"></div>
+                                            </div>
+                                            <span>Сохранить</span>
+                                            </button>
                                     </div>
                                     <div class="clearfix"> </div>
                                 </form>

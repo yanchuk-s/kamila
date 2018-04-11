@@ -99,7 +99,14 @@
 
 
                                     <div class="btn-wrapper">
-                                        <button type="submit" id="editSlider" class="btn btn-make-app">Сохранить
+                                        <button type="submit" id="editSlider" class="btn btn-make-app btn-spiner">
+                                            <div class="spinner">
+                                                <div class="bounce1"></div>
+                                                <div class="bounce2"></div>
+                                                <div class="bounce3"></div>
+                                            </div>
+                                            <span>Сохранить</span>
+
                                         </button>
                                     </div>
                                     <div class="clearfix"> </div>
