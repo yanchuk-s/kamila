@@ -153,9 +153,25 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services-item item">
                             <div class="services-content">
+                                <div class="btn-for-icon bottom"><i class="icon1 fa fa-exclamation" aria-hidden="true"></i> <i class="icon2 fa fa-exclamation" aria-hidden="true"></i></div>                                            <div class="line"></div>
+                                <div class="description">{{trans('lang.homeRulersDesc4')}}
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services-item item">
+                            <div class="services-content">
+                                <div class="btn-for-icon bottom"><i class="icon1 fa fa-map-marker" aria-hidden="true"></i> <i class="icon2 fa fa-map-marker" aria-hidden="true"></i></div>                                            <div class="line"></div>
+                                <div class="description">{{trans('lang.homeRulersDesc3')}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services-item item">
+                            <div class="services-content">
                                 <div class="btn-for-icon bottom"><i class="icon1 fa fa-picture-o" aria-hidden="true"></i> <i class="icon2 fa fa-picture-o" aria-hidden="true"></i></div>                                            <div class="line"></div>
                                 <div class="description">
                                     <ul class="list-unstyled list-our-mission">
+                                        {{trans('lang.forReg')}}:
 
                                         <li>
                                             {{trans('lang.homeRulersDesc2Li1')}}
@@ -176,21 +192,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services-item item">
-                            <div class="services-content">
-                                <div class="btn-for-icon bottom"><i class="icon1 fa fa-map-marker" aria-hidden="true"></i> <i class="icon2 fa fa-map-marker" aria-hidden="true"></i></div>                                            <div class="line"></div>
-                                <div class="description">{{trans('lang.homeRulersDesc3')}}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services-item item">
-                            <div class="services-content">
-                                <div class="btn-for-icon bottom"><i class="icon1 fa fa-exclamation" aria-hidden="true"></i> <i class="icon2 fa fa-exclamation" aria-hidden="true"></i></div>                                            <div class="line"></div>
-                                <div class="description">{{trans('lang.homeRulersDesc4')}}
-                                </div>
-                            </div>
-                        </div>
-
+                        
                     </div>
                 </div>
             </div>

@@ -29,11 +29,11 @@
                         <div class="working-hours-wrapper">
                             <div class="working-hours-inner">
                                 <div class="date-working">{{trans('lang.dn1')}}</div>
-                                <div class="time-working">8:00 - 19:00</div>
+                                <div class="time-working">9:00 - 18:00</div>
                             </div>
                             <div class="working-hours-inner">
                                 <div class="date-working">{{trans('lang.dn2')}}</div>
-                                <div class="time-working">8:00 - 20:00</div>
+                                <div class="time-working">9:00 - 18:00</div>
                             </div>
                             <div class="working-hours-inner">
                                 <div class="date-working">{{trans('lang.dn3')}}</div>
